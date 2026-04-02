@@ -5,8 +5,24 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default [
   { ignores: ['dist', '**/*.css'] },
+  // Configuration pour les scripts Node.js
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['scripts/**/*.{js,cjs}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.node,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'commonjs',
+      },
+    },
+    rules: {
+      ...js.configs.recommended.rules,
+    },
+  },
+  // Configuration pour les fichiers React/Browser
+  {
+    files: ['src/**/*.{js,jsx}', '*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,

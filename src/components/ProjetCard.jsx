@@ -1,28 +1,7 @@
-// Vite: import all assets in src/assets (Vite 5+ syntax)
-const images = import.meta.glob('../assets/*', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-});
+import LazyImage from './LazyImage';
+import { FaExpand } from 'react-icons/fa';
 
-export default function ProjetCard({ projet }) {
-  let imageSrc = projet.image;
-  // Robust image lookup: accept paths like './assets/name.ext' or just 'name.ext'
-  if (imageSrc) {
-    // extract basename (e.g., 'projet1.png')
-    const parts = imageSrc.split('/');
-    const basename = parts[parts.length - 1];
-
-    // First try the exact relative key
-    const directKey = `../assets/${basename}`;
-    if (images[directKey]) {
-      imageSrc = images[directKey];
-    } else {
-      // Fallback: search any images key that ends with the basename
-      const matchKey = Object.keys(images).find((k) => k.endsWith(basename));
-      if (matchKey) imageSrc = images[matchKey];
-    }
-  }
+export default function ProjetCard({ projet, onOpenLightbox }) {
   return (
     <div className="card-base card-interactive card-hover-scale overflow-hidden relative">
       {/* Image en box-shadow derrière la carte */}
@@ -30,7 +9,7 @@ export default function ProjetCard({ projet }) {
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden="true"
         style={{
-          backgroundImage: `url(${imageSrc})`,
+          backgroundImage: `url(${projet.image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(16px) brightness(0.5)',
@@ -38,14 +17,27 @@ export default function ProjetCard({ projet }) {
         }}
       />
       <div className="relative z-10">
-        <div className="relative">
-          <img
-            src={imageSrc}
+        <div className="relative group">
+          <LazyImage
+            src={projet.image}
             alt={projet.title}
-            loading="lazy"
-            className="w-full h-48 md:h-56 object-cover rounded-t-lg"
+            className="w-full h-48 md:h-56 object-cover rounded-t-lg transition-transform 
+                     group-hover:scale-105 cursor-pointer"
+            priority={false}
+            onClick={() => onOpenLightbox && onOpenLightbox()}
           />
           <div className="absolute inset-0 bg-linear-to-t from-dark-100/80 to-transparent rounded-t-lg" />
+
+          {/* Bouton d'agrandissement */}
+          <button
+            onClick={() => onOpenLightbox && onOpenLightbox()}
+            className="absolute top-4 right-4 p-2 bg-black/50 text-white rounded-lg
+                     opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100
+                     transition-all duration-300 hover:bg-purple/80"
+            title="Voir en plein écran"
+          >
+            <FaExpand className="w-4 h-4" />
+          </button>
         </div>
         <div className="p-6">
           <h3 className="text-xl font-bold text-white mb-2">{projet.title}</h3>
@@ -56,7 +48,7 @@ export default function ProjetCard({ projet }) {
             href={projet.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-2 bg-linear-to-r from-purple to-pink text-white rounded-lg transform transition-all
+            className="inline-block px-6 py-2 bg-gradient-to-r from-purple to-pink text-white rounded-lg transform transition-all
                        hover:scale-105 hover:shadow-neon-purple"
           >
             Voir le projet

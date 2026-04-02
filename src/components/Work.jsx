@@ -1,4 +1,4 @@
-import { works } from '../assets/assets';
+import { works } from '../assets/assets.js';
 import { FaBriefcase, FaHandshake, FaBuilding } from 'react-icons/fa';
 
 const pickWorkIcon = (label = '') => {
@@ -12,11 +12,14 @@ export default function Work() {
   return (
     <section id="work" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          <span className="bg-linear-to-r from-purple to-pink text-transparent bg-clip-text">
-            Travail
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+            Mon Travail
           </span>
         </h2>
+        <p className="text-lg text-center text-gray-400 mb-10">
+          Découvrez mes réalisations, collaborations et projets menés avec expertise, engagement et sens du résultat.
+        </p>
         <div className="grid gap-6 md:grid-cols-2">
           {works.map((work, idx) => {
             const Icon = pickWorkIcon(work);

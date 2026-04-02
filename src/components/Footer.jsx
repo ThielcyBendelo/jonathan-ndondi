@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   FaGithub,
   FaLinkedin,
@@ -6,7 +7,7 @@ import {
   FaFacebook,
   FaWhatsapp,
 } from 'react-icons/fa';
-import { contact } from '../assets/assets';
+import { contact } from '../assets/assets.js';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,8 +21,9 @@ export default function Footer() {
     WhatsApp: FaWhatsapp,
   };
 
+
   return (
-    <footer className="bg-dark-200 text-gray-300 py-8 mt-16">
+    <footer className="bg-dark-200 text-gray-300 py-8 mt-auto border-t border-gray-700">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo et Description */}
@@ -42,10 +44,18 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
+                  href="#home"
+                  className="hover:text-purple transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
                   href="#about"
                   className="hover:text-purple transition-colors"
                 >
-                  À propos
+                  À propos de moi
                 </a>
               </li>
               <li>
@@ -58,10 +68,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#projects"
+                  href="#services"
                   className="hover:text-purple transition-colors"
                 >
-                  Projets
+                 Services 
                 </a>
               </li>
               <li>
@@ -108,11 +118,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-          <p>
-            © {currentYear} Ir Bendelo DevFullStack. Tous droits réservés 2025.
-          </p>
+        {/* Copyright uniquement */}
+        <div className="mt-auto pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+          <p>© {currentYear} Louiscar Ingeba | CRP . Tous droits réservés.</p>
         </div>
       </div>
     </footer>
