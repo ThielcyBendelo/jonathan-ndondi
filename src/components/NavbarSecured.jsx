@@ -211,8 +211,17 @@ export default function NavbarSecured() {
               }}
             >
               
-              <span className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">
-                Mon Portfolio
+              <span className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-700 to-red-500 to-red-300 text-transparent bg-clip-text"
+                style={{ 
+                          fontFamily: "'Sancreek', cursive", 
+                          fontWeight: 400,
+                          fontStyle: "normal",
+                          display: "inline-block",
+                          filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.3))",
+
+                }}
+                >
+                 Mon Portfolio
               </span>
             </div>
             {/* Desktop Navigation avec sous-menus */}
@@ -414,7 +423,7 @@ export default function NavbarSecured() {
                   <button
                     onClick={handleRegister}
                     onMouseEnter={() => audioService.playHover()}
-                    className="px-4 py-2 bg-gradient-to-r from-purple to-pink text-white rounded-lg hover:shadow-lg hover:shadow-purple-500/40 transition-all text-sm font-semibold"
+                    className="px-4 py-2 bg-gradient-to-r from-purple to-pink text-red-700 to-red-500 to-red-300 rounded-lg hover:shadow-lg hover:shadow-purple-500/40 transition-all text-sm font-semibold"
                   >
                     S'inscrire
                   </button>
@@ -426,7 +435,7 @@ export default function NavbarSecured() {
   {/* Bouton de changement de thème */}
   <button
     onClick={toggleTheme}
-    className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-black dark:text-white transition-colors"
+    className="p-2 rounded-lg bg-red-100 dark:bg-gray-400 text-black dark:text-white transition-colors"
   >
     {theme === 'dark' ? '☀️' : '🌙'}
   </button>
@@ -435,7 +444,7 @@ export default function NavbarSecured() {
               <button
                 onClick={toggleMenu}
                 onMouseEnter={() => audioService.playHover()}
-                className="md:hidden p-2 rounded-md text-red-500 to-red-300 to-red-200 hover:text-black-500"
+                className="md:hidden p-2 rounded-md text-red-700 to-red-500 to-red-300 hover:text-black-500"
               >
                 {isOpen ? (
                   <svg
@@ -475,7 +484,13 @@ export default function NavbarSecured() {
         </div>
         {/* Mobile menu avec sous-menus professionnels */}
         {isOpen && (
-          <div className="mi:hidden bg-gradient-to-br from-black-400 via-purple-300 to-red-500/30 backdrop-red border-t border-gray-400/40">
+          <div className="mi:hidden bg-gradient-to-br from-black-400 via-purple-300 to-red-500/30 backdrop-red border-t border-gray-400/40 text-hover-red-700 to-red-500 to-red-300 rounded-b-xl shadow-lg z-40 transition-all duration-300"
+          style={{
+            fontFamily: "'Sancreek', cursive", 
+            fontWeight: 400,
+            sfontStyle: "normal",
+          }}
+          >
             <div className="px-2 pt-2 pb-3 space-y-2">
               {navGroups.map((group) => (
                 <div key={group.label} className="mb-2">
@@ -521,7 +536,7 @@ export default function NavbarSecured() {
                     </button>
                     <button
                       onClick={handleRegister}
-                      className="w-full text-left px-4 py-3 text-red-500 hover:bg-red-500 rounded-xl text-gray-500 font-blue transition-colors"
+                      className="w-full text-left px-4 py-3 text-red-700 to-red-500 to-red-300 hover:bg-red-500 rounded-xl text-gray-400 transition-colors"
                     >
                       S'inscrire
                     </button>

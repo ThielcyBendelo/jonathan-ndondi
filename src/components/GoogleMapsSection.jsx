@@ -21,7 +21,7 @@ function GoogleMapsSection() {
         <div className="mt-6 text-gray-400 text-base">
           <strong>Adresse :</strong> Avenue Kimwenza A/, Kinshasa, DR Congo<br />
           <strong>Téléphone :</strong> +243 814 176 800<br />
-          <strong>Email :</strong> servicebanamokeli@gmail.com
+          <strong>Email :</strong> ingebalouiscar@gmail.com
         </div>
       </div>
     </section>
