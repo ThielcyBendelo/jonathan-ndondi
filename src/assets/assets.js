@@ -42,37 +42,66 @@ export const skills = [
 
 export const experiences = [
   {
-    role: 'Ingénieur Full Stack',
-    company: 'Digital Innovation Lab',
-    year: '2024-Présent',
-    type: 'full-time',
+    role: 'Communication & Image',
+    company: 'Muamokel Agency',
+    year: '2026-Présent',
+    type: 'Stratégie de communication externe',
     description:
-      "Développement end-to-end d'applications web (React/Node.js/MongoDB), intégration CI/CD, et optimisation des performances (+40% de rapidité).",
+      "Concevoir et diffuser le narratif de l'agence (expertises en code, nouvelles technologies, transformation digitale) auprès des médias et des partenaires.",
+  },
+
+  {
+    role: 'Communication & Image',
+    company: 'Muamokel Agency',
+    year: '2025-Présent',
+    type: 'Événementiel et Presse ',
+    description:
+      "Organiser des webinaires, des conférences ou des lancements de produits informatiques et rédiger des communiqués de presse ciblés.",
+  },
+
+  {
+    role: 'Communication & Image',
+    company: 'Muamokel Agency',
+    year: '2025-Présent',
+    type: 'Veille et Gestion de crise',
+    description:
+      " Anticiper les risques de réputation liés à des bugs ou des cyberattaques et mettre en place des plans de communication de crise. ",
+  },
+
+  {
+    role: 'Support & Infrastructure',
+    company: 'Mwamokel Agency',
+    year: '2025-Présent',
+    type: 'Entretien du parc informatique',
+    description:
+      "Installer, configurer et mettre à jour le matériel (serveurs, PC) et les licences logicielles nécessaires au développement.",
   },
   {
-    role: 'Développeur Backend',
-    company: 'Mwamokel Services',
-    year: '2023-2024',
-    type: 'full-time',
+    role: 'Support & Infrastructure',
+    company: 'Mwamokel Agency',
+    year: '2023-Présent',
+    type: 'Sécurité et Sauvegarde',
     description:
-      "Conception et développement d'APIs RESTful scalables avec Python/Django, gestion de bases de données PostgreSQL, et architecture microservices.",
+      'Mettre en place des solutions de cybersécurité, gérer les VPN, les certificats SSL et assurer la pérennité des données par des sauvegardes régulières.',
   },
   {
-    role: 'Testeur Logiciel / QA Engineer',
-    company: 'Mwamokel Services',
-    year: '2023-2024',
-    type: 'full-time',
+    role: 'Support & Infrastructure',
+    company: 'Mwamokel Agency',
+    year: '2025-Présent',
+    type: 'Support technique (Helpdesk)',
     description:
-      'Automatisation des tests (Selenium, Jest, Cypress), détection de bugs critiques, et amélioration de la couverture de tests à 85%.',
+      "Diagnostiquer et réparer les pannes réseaux ou hardware pour minimiser les interruptions de service.",
   },
-  {
-    role: 'Développeur Frontend',
-    company: 'Mwamokel Sevice',
-    year: '2023-2024',
-    type: 'full-time',
+
+ {
+    role: 'Support & Infrastructure',
+    company: 'Mwamokel Agency',
+    year: '2025-Présent',
+    type: 'Gestion des accès Cloud :',
     description:
-      "Création d'interfaces utilisateur modernes et responsives avec React, intégration d'APIs, et collaboration avec designers UX/UI.",
+      "Administrer les services Cloud (Office 365, AWS, Azure) pour garantir l'accessibilité des projets n'importe où.",
   },
+
 ];
 
 export const projets = [
@@ -180,9 +209,9 @@ export const contact = [
   { label: 'Email', link: 'ingebalouiscar@gmail.com' },
   {
     label: 'LinkedIn',
-    link: 'https://linkedin.com/in/louiscar',
+    link: 'https://linkedin.com/in/louiscar-699734222?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
-  { label: 'GitHub', link: 'https://github.com/' },
+  // { label: 'GitHub', link: 'https://github.com/' },
   {
     label: 'Instagram',
     link: 'https://instagram.com/louiscarfernandez?igsh=MjB3ODdzMDI4dGto',
@@ -191,8 +220,8 @@ export const contact = [
     label: 'Facebook',
     link: 'https://facebook.com/louiscar.fernandez',
   },
-  {
-    label: 'WhatsApp',
-    link: 'https://wa.me/',
-  },
+  // {
+  //   label: 'WhatsApp',
+  //   link: 'https://wa.me/',
+  // },
 ];

@@ -154,7 +154,7 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.8, type: 'spring' }}
             >
               <motion.p
-                className="text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-4"
+                className="text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-purple-500 mb-4"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >

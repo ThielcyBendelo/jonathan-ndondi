@@ -92,14 +92,14 @@ export default function Experience() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-3">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-dark-300 ring-1 ring-white/5 shadow-inner">
-                      <Icon className="h-5 w-5 text-gray-200 group-hover:drop-shadow-glow" />
+                      <Icon className="h-5 w-5 text-red-500 group-hover:drop-shadow-glow" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                    <h3 className="text-xl font-bold text-red-500 to-red-300 to-red-200">{exp.role}</h3>
                   </div>
                   <div className="flex items-center gap-4 text-gray-400">
                     <div className="flex items-center gap-2">
                       <FaBuilding className="h-4 w-4 text-gray-300" />
-                      <span className="text-blue">{exp.company}</span>
+                      <span className="text-blue-800">{exp.company}</span>
                     </div>
                     <div className="hidden md:block text-gray-600">•</div>
                     <div className="flex items-center gap-2">

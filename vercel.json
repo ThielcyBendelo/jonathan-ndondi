@@ -2,60 +2,13 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "env": {
-    "VITE_EMAILJS_SERVICE_ID": {
-      "description": "EmailJS Service ID",
-      "placeholder": "service_xxxxx"
-    },
-    "VITE_EMAILJS_TEMPLATE_ID": {
-      "description": "EmailJS Template ID",
-      "placeholder": "template_xxxxx"
-    },
-    "VITE_EMAILJS_PUBLIC_KEY": {
-      "description": "EmailJS Public Key",
-      "placeholder": "xxxxx"
-    },
-    "VITE_API_URL": {
-      "description": "Backend API URL",
-      "placeholder": "https://api.yourdomain.com"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdn.emailjs.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: http://localhost:*; frame-ancestors 'none';"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "geolocation=(), microphone=(), camera=()"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, immutable, max-age=31536000"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://jsdelivr.net https://emailjs.com; style-src 'self' 'unsafe-inline' https://googleapis.com; font-src 'self' https://gstatic.com; img-src 'self' data: https:; connect-src 'self' https: http://localhost:*; frame-ancestors 'none';"
         }
       ]
     }

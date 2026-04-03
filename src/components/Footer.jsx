@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaGithub,
   FaLinkedin,
@@ -43,44 +44,27 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Liens Rapides</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#home"
-                  className="hover:text-purple transition-colors"
-                >
-                  Home
-                </a>
+                <Link to="/home">Accueil</Link>
               </li>
               <li>
-                <a
-                  href="#about"
-                  className="hover:text-purple transition-colors"
-                >
-                  À propos de moi
-                </a>
+            <li>
+              <Link to="/about">À propos de moi</Link> 
+            </li>
               </li>
               <li>
-                <a
-                  href="#skills"
-                  className="hover:text-purple transition-colors"
-                >
-                  Compétences
-                </a>
+               <Link to="/skills">Compétences</Link>
               </li>
               <li>
-                <a
-                  href="#services"
-                  className="hover:text-purple transition-colors"
-                >
-                 Services 
-                </a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  className="hover:text-purple transition-colors"
-                >
-                  Contact
-                </a>
+                <Link to="/experience">Expériences</Link>
+              </li>
+              <li>
+                <Link to="/projects">Projets</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
               </li>
             </ul>
           </div>

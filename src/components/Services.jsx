@@ -49,7 +49,7 @@ function Services() {
     <section className="py-10 px-4 bg-gradient-to-b from-back-400 via-black to-blue-50" id="services">
       <div className="max-w-6xl mx-auto">
         <div className="mb-4 text-center">
-          <h2 className="text-5xl font-extrabold text-blue-700 mb-2 mt-16 tracking-tight drop-shadow-lg">Mes Services</h2>
+          <h2 className="text-4xl font-bold mt-12 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">Mes Services</h2>
           <p className="text-lg text-gray-400 font-medium max-w-2xl mx-auto mb-6">Allier la rigueur technique de la maintenance système à la finesse des relations publiques. Je propose des solutions globales pour garantir la haute disponibilité de vos infrastructures tout en optimisant l'image de marque et l'engagement de vos partenaires</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
@@ -60,7 +60,7 @@ function Services() {
               style={{ animation: `fadeInUp 0.7s cubic-bezier(.39,.575,.565,1) ${idx * 0.15}s both` }}
             >
               <div className="text-6xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">{service.icon}</div>
-              <h3 className="text-2xl font-extrabold mb-2 text-blue-700 tracking-tight drop-shadow">{service.title}</h3>
+              <h3 className="text-2xl font-extrabold mb-2 text-red-500 to-red-300 to-red-200 tracking-tight drop-shadow">{service.title}</h3>
               <p className="text-gray-900 mb-2 font-medium">{service.description}</p>
               <div className="mb-2 text-sm text-indigo-700 font-semibold">Template : {service.template}</div>
               {/* <div className="mb-2 text-sm text-blue-700"><span className="inline-block bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">Durée estimée :</span> {service.duration}</div> */}

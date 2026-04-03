@@ -65,8 +65,6 @@ export default function ProfessionalSplashScreen({ onComplete }) {
     };
   }, [currentStep, onComplete, loadingSteps]);
 
- 
-
   const textVariants = {
     initial: { y: 30, opacity: 0 },
     animate: {
@@ -112,7 +110,7 @@ export default function ProfessionalSplashScreen({ onComplete }) {
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{
             background:
-              'linear-gradient(135deg, #f88909 0%, #f71823 25%, #f51773 50%, #1e293b 75%, #0f172a 100%)',
+              'linear-gradient(135deg, #f86008 100%, #04bff8 5%, #334155 10%, #f3f5f8 25%, #00040e 75%)',
           }}
         >
           {/* Animated Background */}
@@ -174,8 +172,6 @@ export default function ProfessionalSplashScreen({ onComplete }) {
             </div>
           </div>
 
-          
-
             {/* Company Name */}
             <motion.div
               variants={textVariants}
@@ -185,7 +181,7 @@ export default function ProfessionalSplashScreen({ onComplete }) {
             >
               <h1 className="text-4xl font-bold text-white mb-2">Louiscar Ingeba</h1>
               <p className="text-xl text-slate-300 font-light">
-                Chargé Relations Publiques & MS
+                Chargé Relations Publiques & CRP
               </p>
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
             </motion.div>
@@ -248,9 +244,9 @@ export default function ProfessionalSplashScreen({ onComplete }) {
               className="flex justify-center space-x-8 text-slate-400"
             >
               {[
-                {  },
-                {  },
-                { },
+                { icon: '', label: 'Négociation'},
+                { icon: '', label: 'Communication' },
+                { icon: '', label: 'Gestion projet' },
               ].map((feature, index) => (
                 <motion.div
                   key={index}
@@ -284,9 +280,9 @@ export default function ProfessionalSplashScreen({ onComplete }) {
                   transition={{ duration: 0.6 }}
                   className="text-6xl mb-4"
                 >
-
+            
                 </motion.div>
-                <h2 className="text-2xl font-bold">Welcome chez moi !</h2>
+                <h2 className="text-2xl font-red-500">Welcome Chez Moi !</h2>
               </div>
             </motion.div>
           )}

@@ -44,12 +44,12 @@
   --bg: #0f0f0f;
   --surface: #1a1a1a;
   --muted: #e5e5e5;
-  --muted-2: #a3a3a3;
+  --muted-2: #e5e5e5;
   --accent-1: #ca0912;
   --accent-2: #28b305;
   --text-primary: #ffffff;
-  --text-secondary: #d1d5db;
-  --border-color: #374151;
+  --text-secondary: #e5e5e5;
+  --border-color: #e5e5e5;
 }
 
 /* Mode clair */

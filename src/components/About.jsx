@@ -91,7 +91,7 @@ export default function About() {
             className="text-3xl md:text-4xl font-bold text-center mb-6"
             variants={textVariants}
           >
-            <span className="text-2xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">
+            <span className="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">
               À propos de moi
             </span>
           </motion.h2>

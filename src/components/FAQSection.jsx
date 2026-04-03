@@ -29,7 +29,7 @@ function FAQSection() {
           {faqs.map((faq, idx) => (
             <details key={idx} className="bg-gradient-to-r from-red-500 to-red-300 to-red-200 rounded-xl shadow p-4 border border-blue-100">
               <summary className="font-semibold text-blue-900 cursor-pointer text-lg">{faq.question}</summary>
-              <div className="mt-2 text-blue-400 text-base">{faq.answer}</div>
+              <div className="mb-4 text-black-600 text-base">{faq.answer}</div>
             </details>
           ))}
         </div>

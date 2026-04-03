@@ -199,16 +199,9 @@ export default function NavbarSecured() {
 
   return (
     <>
-      {/* Debug info: rôle et email utilisateur */}
-      <div className="fixed top-0 left-0 w-full bg-yellow-100 text-yellow-900 text-xs px-2 py-1 z-[100] flex justify-center items-center">
-        <span>
-          Session: {isAuthenticated ? 'Connecté' : 'Déconnecté'} | Email:{' '}
-          {currentUser?.email || 'aucun'} | Rôle: {currentUser?.role || 'aucun'}
-        </span>
-      </div>
-      <nav className="fixed top-6 left-0 right-0 bg-20 backdrop-black z-50 border-b border-gray-700/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
+    <nav className="fixed top-0 left-0 right-0 bg-white/90 text-black-600 backdrop-blur-md z-50 border-b border-red-500 to-red-300 to-red-200 -200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between h-16 items-center">
             {/* Logo */}
             <div
               className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
@@ -218,7 +211,7 @@ export default function NavbarSecured() {
               }}
             >
               
-              <span className="text-2xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">
+              <span className="text-4xl font-bold mb-2 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">
                 Louiscar.CRP
               </span>
             </div>
@@ -227,7 +220,7 @@ export default function NavbarSecured() {
               {navGroups.map((group) => (
                 <div key={group.label} className="relative group">
                   <button
-                    className="text-gray-300 hover:text-white font-semibold text-sm px-3 py-2 rounded-lg bg-transparent group-hover:bg-dark-300 transition-colors"
+                    className="text-black-500 hover:text-from-red-500 to-red-300 to-red-200 font-blue-400 transition-colors"
                     style={{
                       cursor: group.items?.length > 1 ? 'pointer' : 'default',
                     }}
@@ -241,7 +234,7 @@ export default function NavbarSecured() {
                           key={item.href}
                           href={item.href}
                           onClick={(e) => handleNavClick(item.href, e)}
-                          className="flex items-center gap-2 px-5 py-3 text-gray-300 hover:text-white hover:bg-purple/20 text-base rounded-xl transition-all duration-200 font-medium group-hover:scale-105"
+                          className="flex items-center gap-2 px-5 py-3 text-black-500 hover:text-red-500 hover:bg-purple/20 text-base rounded-xl transition-all duration-200 font-medium group-hover:scale-105"
                         >
                           <span className="text-lg">{item.icon}</span> {item.label}
                         </a>
@@ -252,7 +245,7 @@ export default function NavbarSecured() {
                     <a
                       href={group.items[0].href}
                       onClick={(e) => handleNavClick(group.items[0].href, e)}
-                      className="text-gray-300 hover:text-white text-sm px-3 py-2 rounded-lg transition-colors"
+                      className="text-black-500 hover:text-red-500 text-sm px-3 py-2 rounded-lg transition-colors"
                     >
                       {group.items[0].icon} {group.items[0].label}
                     </a>
@@ -264,7 +257,7 @@ export default function NavbarSecured() {
                 <button
                   type="button"
                   onClick={() => navigate('/clients')}
-                  className="text-gray-300 hover:text-white transition-colors text-sm font-semibold px-3 py-1 rounded-lg border border-purple-500/40 bg-purple-500/10 ml-2"
+                  className="text-black-300 hover:text-red-500 transition-colors text-sm font-semibold px-3 py-1 rounded-lg border border-purple-500/40 bg-purple-500/10 ml-2"
                 >
                   Clients
                 </button>
@@ -277,7 +270,7 @@ export default function NavbarSecured() {
                 onClick={toggleAudio}
                 onMouseEnter={() => audioService.playHover()}
                 aria-label="Basculer sons"
-                className="p-2 rounded-md text-gray-300 hover:text-white transition-colors hidden sm:block"
+                className="p-2 rounded-md text-black-500 hover:text-red-500 transition-colors hidden sm:block"
                 title={
                   audioEnabled ? 'Désactiver les sons' : 'Activer les sons'
                 }
@@ -319,7 +312,7 @@ export default function NavbarSecured() {
                 onClick={toggleTheme}
                 onMouseEnter={() => audioService.playHover()}
                 aria-label="Basculer thème"
-                className="p-2 rounded-md text-gray-300 hover:text-white transition-colors hidden sm:block"
+                className="p-2 rounded-md text-red-500 to-red-300 to-red-200 hover:text-red-500 transition-colors hidden sm:block"
               >
                 {theme === 'dark' ? (
                   <svg
@@ -376,13 +369,13 @@ export default function NavbarSecured() {
                     <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple to-pink flex items-center justify-center text-white text-xs font-bold">
                       {currentUser?.email?.[0]?.toUpperCase() || 'U'}
                     </div>
-                    <span className="hidden sm:inline text-gray-300">
+                    <span className="hidden sm:inline text-red-500">
                       {currentUser?.email?.split('@')[0] || 'User'}
                     </span>
                   </button>
                   {/* Dropdown Menu */}
                   {showUserMenu && (
-                    <div className="absolute right-0 mt-2 w-48 bg-dark-300 border border-gray-600/50 rounded-lg shadow-lg overflow-hidden z-50">
+                    <div className="absolute right-0 mt-2 w-48 bg-dark-300 border border-red-600/50 rounded-lg shadow-lg overflow-hidden z-50">
                       <div className="px-4 py-3 border-b border-gray-600/30">
                         <p className="text-sm text-gray-300">
                           Connecté en tant que
@@ -413,7 +406,7 @@ export default function NavbarSecured() {
                   <button
                     onClick={handleLogin}
                     onMouseEnter={() => audioService.playHover()}
-                    className="flex items-center gap-2 px-3 py-2 text-gray-300 border border-gray-600/50 rounded-lg hover:text-white hover:border-purple/50 transition-colors text-sm"
+                    className="flex items-center gap-2 px-3 py-2 text-black-500 border border-red-600/50 rounded-lg hover:text-white hover:border-purple/50 transition-colors text-sm"
                   >
                     <FaSignInAlt className="h-4 w-4" />
                     Connexion
@@ -427,11 +420,22 @@ export default function NavbarSecured() {
                   </button>
                 </div>
               )}
+
+{/* Section Mobile : Thème + Menu */}
+<div className="md:hidden flex items-center gap-2">
+  {/* Bouton de changement de thème */}
+  <button
+    onClick={toggleTheme}
+    className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-black dark:text-white transition-colors"
+  >
+    {theme === 'dark' ? '☀️' : '🌙'}
+  </button>
+
               {/* Mobile menu button */}
               <button
                 onClick={toggleMenu}
                 onMouseEnter={() => audioService.playHover()}
-                className="md:hidden p-2 rounded-md text-gray-300 hover:text-white"
+                className="md:hidden p-2 rounded-md text-red-500 to-red-300 to-red-200 hover:text-black-500"
               >
                 {isOpen ? (
                   <svg
@@ -468,19 +472,20 @@ export default function NavbarSecured() {
             </div>
           </div>
         </div>
+        </div>
         {/* Mobile menu avec sous-menus professionnels */}
         {isOpen && (
-          <div className="mi:hidden bg-gradient-to-br from-black-800 via-purple-400 to-gray-500/25 backdrop-black border-t border-gray-500/40">
+          <div className="mi:hidden bg-gradient-to-br from-black-400 via-purple-300 to-red-500/30 backdrop-red border-t border-gray-400/40">
             <div className="px-2 pt-2 pb-3 space-y-2">
               {navGroups.map((group) => (
                 <div key={group.label} className="mb-2">
-                  <div className="font-bold text-from-red-500 to-red-300 to-red-200 text-base mb-1 pl-2">{group.label}</div>
+                  <div className="font-bold text-from-red-500 to-red-300 to-red-200 text-base mb-2 pl-2">{group.label}</div>
                   {group.items.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}
                       onClick={(e) => handleNavClick(item.href, e)}
-                      className="flex items-center gap-2 px-4 py-3 text-white hover:text-from-red-500 to-red-300 to-red-200 hover:bg-purple/40 text-base rounded-xl transition-all duration-200 font-medium"
+                      className="flex items-center gap-2 px-4 py-3 text-black-500 hover:text-from-red-500 to-red-300 to-red-200 hover:bg-purple/40 text-base rounded-xl transition-all duration-200 font-medium"
                     >
                       <span className="text-lg">{item.icon}</span> {item.label}
                     </a>
@@ -509,14 +514,14 @@ export default function NavbarSecured() {
                   <>
                     <button
                       onClick={handleLogin}
-                      className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-dark-300 rounded-xl text-base transition-colors flex items-center gap-2"
+                      className="w-full text-left px-4 py-3 text-black-500 hover:text-white hover:bg-dark-300 rounded-xl text-base transition-colors flex items-center gap-2"
                     >
                       <FaSignInAlt className="h-4 w-4" />
                       Connexion
                     </button>
                     <button
                       onClick={handleRegister}
-                      className="w-full text-left px-4 py-3 text-purple hover:bg-dark-300 rounded-xl text-gray-400 font-semibold transition-colors"
+                      className="w-full text-left px-4 py-3 text-red-500 hover:bg-red-500 rounded-xl text-gray-500 font-blue transition-colors"
                     >
                       S'inscrire
                     </button>
