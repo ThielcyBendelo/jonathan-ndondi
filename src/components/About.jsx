@@ -1,7 +1,6 @@
 import { about } from '../assets/assets.js';
 import {
   profile1Image as profileImg,
-  programmationImage as bgImage,
 } from '../assets/assets.js';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
@@ -49,22 +48,17 @@ export default function About() {
     <>
       <motion.section
         id="about"
-        className="relative py-20 px-4 overflow-hidden"
+        className="relative pb-20 pt-0 overflow-hidden"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.0 }}
         variants={containerVariants}
       >
         {/* Background image */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'brightness(0.15)',
-            opacity: 0.6,
+            backgroundColor: 'rgba(14, 1, 1, 0.99)',
           }}
         />
 
@@ -82,6 +76,7 @@ export default function About() {
               src={profileImg}
               alt="Profil"
               className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mb-10 shadow-lg border-4 border-purple hover:scale-105 transition-transform duration-300"
+               style={{ objectPosition: 'center 10%' }}
               placeholder={
                 <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-purple/20 to-pink/20 animate-pulse border-4 border-purple mb-10 shadow-lg" />
               }

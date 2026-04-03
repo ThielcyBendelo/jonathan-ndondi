@@ -100,7 +100,8 @@ export default function Hero() {
               <LazyImage
                 src={profile1Image}
                 alt="Louiscar Ingeba"
-                className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple shadow-neon-purple relative z-10"
+                className="w-47 h-47 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple shadow-neon-purple relative z-10"
+                 style={{ objectPosition: 'center 10%' }}
                 priority={true}
                 placeholder={
                   <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-purple to-pink animate-pulse border-4 border-purple" />

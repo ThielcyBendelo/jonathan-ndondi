@@ -179,9 +179,7 @@ export default function ProfessionalSplashScreen({ onComplete }) {
             {/* Company Name */}
             <motion.div
               variants={textVariants}
-              initial="initial"
-              animate="animate"
-              className="mb-8"
+             
             >
               
               <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
