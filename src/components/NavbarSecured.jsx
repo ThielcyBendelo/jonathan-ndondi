@@ -484,11 +484,11 @@ export default function NavbarSecured() {
         </div>
         {/* Mobile menu avec sous-menus professionnels */}
         {isOpen && (
-          <div className="mi:hidden bg-gradient-to-br from-black-400 via-purple-300 to-red-500/30 backdrop-red border-t border-gray-400/40 text-hover-red-700 to-red-500 to-red-300 rounded-b-xl shadow-lg z-40 transition-all duration-300"
+          <div className="mi:hidden bg-gradient-to-br mb-3 text-black-400 via-purple-300 to-red-500/30 backdrop-red border-t border-gray-400/40 text-hover-red-700 to-red-500 to-red-300 rounded-b-xl shadow-lg z-40 transition-all duration-300"
           style={{
-            fontFamily: "'Sancreek', cursive", 
-            fontWeight: 400,
-            sfontStyle: "normal",
+            fontFamily: "'Saira', serif", 
+            fontWeight: 900,
+            fontStyle: "normal",
           }}
           >
             <div className="px-2 pt-2 pb-3 space-y-2">
