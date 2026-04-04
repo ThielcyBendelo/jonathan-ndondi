@@ -204,7 +204,7 @@ const navGroups = [
 
   return (
     <>
-    <nav className="fixed top-0 left-0 right-0 bg-white/90 text-black-600 backdrop-blur-md z-50 border-b border-red-500 to-red-300 to-red-200 -200">
+    <nav className="fixed top-0 left-0 right-0 bg-white/90 text-black-600 backdrop-blur-md z-50 border-b border-red-500 to-red-300 to-red-200 -200 shadow-[0_6px_20px_-5px_rgba(239,68,68,0.2)]">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex justify-between h-16 items-center">
             {/* Logo */}

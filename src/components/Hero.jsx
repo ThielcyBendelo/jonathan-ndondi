@@ -141,7 +141,7 @@ export default function Hero() {
             </motion.h2>
 
             <motion.p
-              className="text-lg md:text-2xl text-red-700 to-red-500 to-red-300 mb-5 font-medium"
+              className="text-lg md:text-2xl text-red-700 to-red-500 to-red-300 mb-5 font-medium bg-gradient-to-r from-red-400 to-purple-500 text-transparent bg-clip-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}

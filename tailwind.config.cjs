@@ -13,7 +13,16 @@ module.exports = {
         sans: ['Saira', 'sans-serif'],
         antonio: ['Antonio', 'sans-serif'],
       },
-    },
+     theme: {
+    extend: {
+      colors: {
+        'dark-100': '#1a1a1a', // Assure-toi que tes couleurs sont définies
+        'zinc-900': '#18181b',
+      }
+    }
+    }
   },
+    },
   plugins: [],
 };
+

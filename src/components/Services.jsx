@@ -1,42 +1,53 @@
 import React, { useState } from "react";
-import QuoteModal from "./QuoteModal";
+import QuoteModal from "./QuoteModal"; // Assure-toi que ce fichier existe
+import { FaBullhorn, FaServer, FaHandsHelping, FaShieldAlt, FaEnvelope } from "react-icons/fa";
 
 const services = [
   {
     title: "Gestion de l'image de marque",
-    description:
-      "  Pilotage de la communication externe et des relations presse pour l'agence.",
-    template:
-      "Stratégie de communication, rédaction de communiqués de presse, gestion des réseaux sociaux, organisation d'événements et suivi des campagnes publicitaires.",
-    benefits: ["Stratégie personnalisée", "Rédaction professionnelle", "Gestion de crise", "Reporting détaillé"],
+    icon: <FaBullhorn />,
+    description: "Pilotage de la communication externe et des relations presse pour l'agence.",
+    template: "Stratégie de communication, rédaction de communiqués de presse, gestion des réseaux sociaux, organisation d'événements et suivi des campagnes publicitaires.",
+    benefits: ["Stratégie personnalisée", "Rédaction professionnelle", "Gestion de crise", "Reporting"],
+    price: "Sur devis",
   },
   {
     title: "Maintien en Condition Opérationnelle (MCO)",
-    description:
-      "Surveillance, mises à jour et optimisation des infrastructures serveurs et parcs informatiques.",
-    template:
-      "Monitoring 24/7, gestion des incidents, mises à jour de sécurité, optimisation des performances et support technique proactif.",
-    benefits: ["Surveillance continue", "Intervention rapide", "Mises à jour régulières", "Optimisation des performances"],
+    icon: <FaServer />,
+    description: "Surveillance, mises à jour et optimisation des infrastructures serveurs.",
+    template: "Monitoring 24/7, gestion des incidents, mises à jour de sécurité, optimisation des performances et support technique proactif.",
+    benefits: ["Surveillance continue", "Intervention rapide", "Mises à jour", "Optimisation"],
+    price: "Sur devis",
   },
   {
     title: "Interface Client-Technique",
-    description:
-      "Traduction des besoins business en spécifications techniques pour les développeurs.",
-    template:
-      "Rédaction de cahiers des charges, gestion de projets Agile, coordination entre équipes marketing et développement, validation des livrables et suivi de la qualité.",
-    benefits: [" Communication fluide", "Documentation claire", "Gestion de projet efficace", "Validation rigoureuse"],
+    icon: <FaHandsHelping />,
+    description: "Traduction des besoins business en spécifications techniques pour les développeurs.",
+    template: "Rédaction de cahiers des charges, gestion de projets Agile, coordination entre équipes marketing et développement, validation des livrables et suivi de qualité.",
+    benefits: ["Communication fluide", "Documentation claire", "Gestion efficace", "Validation"],
+    price: "Sur devis",
   },
   {
     title: "Support & Continuité de Service",
-    description:
-      " Gestion des incidents et maintenance préventive des systèmes déployés.",
-    template:
-      "Support technique 24/7, maintenance préventive, gestion des sauvegardes, monitoring des serveurs et optimisation des performances pour garantir la disponibilité de vos services.",
-    benefits: ["Audit RGPD", "Rapport détaillé", "Intervention rapide", "Formation incluse"],
+    icon: <FaShieldAlt />,
+    description: "Gestion des incidents et maintenance préventive des systèmes déployés.",
+    template: "Support technique 24/7, maintenance préventive, gestion des sauvegardes, monitoring des serveurs et optimisation des performances pour garantir disponibilté de vos services.",
+    benefits: ["Audit RGPD", "Rapport détaillé", "Intervention rapide", "Formation"],
+    price: "Sur devis",
   },
 ];
 
-function Services() {
+// Helper pour la modale
+function getServiceKey(title) {
+  const t = title.trim();
+  if (t.includes("image de marque")) return "Gestion de image de marque";
+  if (t.includes("MCO")) return "Maintien en Condition Opérationnelle (MCO)";
+  if (t.includes("Interface")) return "Interface Client-Technique";
+  if (t.includes("Support")) return "Support & Continuité de Service";
+  return "autre";
+}
+
+export default function Services() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
 
@@ -46,75 +57,80 @@ function Services() {
   };
 
   return (
-    <section className="py-10 px-4 bg-gradient-to-b from-back-400 via-black to-black-500" id="services">
+    <section id="services" className="py-16 px-4 bg-white dark:bg-black transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold mt-12 bg-gradient-to-r from-red-500 to-red-300 to-red-200">Mes Services</h2>
-          <p className="text-lg text-gray-400 font-medium max-w-2xl mx-auto mb-6">Allier la rigueur technique de la maintenance système à la finesse des relations publiques. Je propose des solutions globales pour garantir la haute disponibilité de vos infrastructures tout en optimisant l'image de marque et l'engagement de vos partenaires</p>
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold mt-12 bg-gradient-to-r from-red-700 via-red-500 to-red-300 bg-clip-text text-transparent inline-block">
+            Mes Services
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 font-medium max-w-2xl mx-auto mt-4">
+            Allier la rigueur technique de la maintenance système à la finesse des relations publiques.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-br from-white via-white-500 to-white-400 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center border border-blue-100 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-blue-50 group"
-              style={{ animation: `fadeInUp 0.7s cubic-bezier(.39,.575,.565,1) ${idx * 0.15}s both` }}
+              className="bg-slate-50 dark:bg-zinc-900 rounded-3xl shadow-xl p-8 flex flex-col items-center text-center border border-gray-200 dark:border-zinc-800 transition-all duration-500 hover:-translate-y-2 group"
             >
-              <div className="text-6xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">{service.icon}</div>
-              <h3 className="text-2xl font-extrabold mb-2 text-red-500 to-red-300 to-red-200 tracking-tight drop-shadow">{service.title}</h3>
-              <p className="text-gray-900 mb-2 font-medium">{service.description}</p>
-              <div className="mb-2 text-sm text-indigo-700 font-semibold">Template : {service.template}</div>
-              {/* <div className="mb-2 text-sm text-blue-700"><span className="inline-block bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">Durée estimée :</span> {service.duration}</div> */}
-              <div className="mb-2 flex flex-wrap justify-center gap-2">
-                {service.benefits && service.benefits.map((b, i) => (
-                  <span key={i} className="inline-block bg-green-100 text-green-800 rounded-full px-3 py-1 text-xs font-semibold shadow">{b}</span>
+              <div className="text-6xl mb-4 text-red-600 dark:text-red-500 group-hover:scale-110 transition-transform duration-300">
+                {service.icon}
+              </div>
+
+              <h3 className="text-2xl font-extrabold mb-2 text-gray-900 dark:text-white tracking-tight">
+                {service.title}
+              </h3>
+
+              <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                {service.description}
+              </p>
+
+              <div className="mb-4 p-3 bg-gray-100 dark:bg-zinc-800 rounded-xl text-xs text-indigo-600 dark:text-indigo-400 font-semibold italic">
+  <span className="block text-gray-500 dark:text-gray-500 mb-1 uppercase tracking-widest text-[10px]">Exemple / Template :</span>
+  {service.template}
+</div>
+              <div className="mb-6 flex flex-wrap justify-center gap-2">
+                {service.benefits.map((b, i) => (
+                  <span key={i} className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-full px-3 py-1 text-xs font-bold shadow-sm">
+                    {b}
+                  </span>
                 ))}
               </div>
-              {/* <div className="mb-2 text-sm">
-                <a
-                  href={service.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-blue-600 underline hover:text-blue-800 font-semibold transition"
+
+              <div className="mt-auto w-full flex flex-col gap-3">
+                <div className="mb-2 text-lg font-bold text-green-600 dark:text-green-500">
+                  Tarif : {service.price}
+                </div>
+                
+                {/* Bouton 1 : Devis (Ouvre la modale) */}
+                <button
+                  onClick={() => handleQuoteClick(getServiceKey(service.title))}
+                  className="w-full py-3 bg-red-600 text-white rounded-xl font-bold shadow-lg hover:bg-red-700 transition-all transform active:scale-95"
                 >
-                  Voir un exemple
+                  Demander un devis
+                </button>
+
+                {/* Bouton 2 : Mail (Ouvre le logiciel de mail) */}
+                <a
+                  href={`mailto:ingebalouiscar@gmail.com?subject=Information sur ${service.title}`}
+                  className="flex items-center justify-center gap-2 w-full py-3 border-2 border-red-600 dark:border-red-500 text-red-600 dark:text-red-500 rounded-xl font-bold hover:bg-red-600 hover:text-white dark:hover:bg-red-500 dark:hover:text-white transition-all duration-300"
+                >
+                  <FaEnvelope /> Contacter moi
                 </a>
-              </div> */}
-              <div className="mb-4 text-lg font-bold text-green-700">Tarif : {service.price}</div>
-              <button
-                className="mt-auto px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold shadow hover:from-blue-700 hover:to-purple-700 transition-transform duration-300 transform hover:scale-105 focus:scale-100 active:scale-95"
-                onClick={() => handleQuoteClick(getServiceKey(service.title))}
-              >
-                {service.action}
-              </button>
+              </div>
             </div>
           ))}
         </div>
+
         <QuoteModal
           isOpen={modalOpen}
           onClose={() => setModalOpen(false)}
           defaultService={selectedService}
         />
-        <style>{`
-          @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(40px) scale(0.96); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-          }
-        `}</style>
       </div>
     </section>
   );
-  // Helper pour convertir le titre en clé EmailJS
-  function getServiceKey(title) {
-    switch (title) {
-      case "Développement Web": return "site-web";
-      case "Applications Mobiles": return "mobile";
-      case "Design UI/UX": return "application";
-      case "Cybersécurité": return "cybersecurite";
-      case "Maintenance Systèmes": return "maintenance";
-      case "Services Cloud": return "cloud";
-      default: return "autre";
-    }
-  }
 }
 
-export default Services;
+  

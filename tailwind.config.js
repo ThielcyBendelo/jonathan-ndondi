@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ['selector', '[data-theme="dark"]'], 
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -30,7 +31,16 @@ export default {
       dropShadow: {
         glow: '0 0 8px rgb(139 92 246 / 0.75)',
       },
-    },
+
+      theme: {
+    extend: {
+      colors: {
+        'dark-100': '#1a1a1a', // Assure-toi que tes couleurs sont définies
+        'zinc-900': '#18181b',
+      }
+    }
+    }
   },
+    },
   plugins: [],
 };
