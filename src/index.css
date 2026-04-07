@@ -60,9 +60,9 @@
   --surface: #f8fafc;
   --muted: #0f172a;
   --muted-2: #334155;
-  --accent-2: #f8121e;
+  --accent-2: #140350;
   --text-primary: #0f172a;
-  --text-secondary: #1e293b;
+  --text-secondary: #041530;
   --border-color: #e2e8f0;
 }
 
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   --muted: #0f172a;
   --muted-2: #334155;
   --accent-1: #7c3aed;
-  --accent-2: #db2777;
+  --accent-2: #a827db;
 }
 
 /* Respect reduced motion */
@@ -249,7 +249,7 @@ body {
 
   /* Warning Toast */
   .Toastify__toast--warning .custom-toast {
-    border-color: rgba(245, 158, 11, 0.4);
+    border-color: rgba(1, 12, 26, 0.4);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(245, 158, 11, 0.1);
   }
 
@@ -337,7 +337,7 @@ body {
 
   /* Améliorations hover en mode clair */
   [data-theme='light'] .hover\:text-purple-400:hover {
-    color: #7c3aed !important;
+    color: #0c011f !important;
   }
 
   [data-theme='light'] .hover\:bg-dark-400:hover {

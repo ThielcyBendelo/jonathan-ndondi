@@ -1,118 +1,102 @@
 import { about } from '../assets/assets.js';
-import {
-  profile1Image as profileImg,
-} from '../assets/assets.js';
-// eslint-disable-next-line no-unused-vars
+import { profile1Image as ibramus } from '../assets/assets.js';
 import { motion } from 'framer-motion';
 import LazyImage from './LazyImage';
 import GoogleMapsSection from './GoogleMapsSection';
 
 export default function About() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 30 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
-
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   return (
     <>
-      <motion.section
-        id="about"
-        className="relative pb-20 pt-0 overflow-hidden"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.0 }}
-        variants={containerVariants}
-      >
-      
+      <section id="about" className="bg-slate-50 py-24 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Colonne Image - Style Portrait Galerie */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative z-10 border-[12px] border-white shadow-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+                <LazyImage
+                  src={ibramus}
+                  alt="Ibrahim Muswema"
+                  className="w-full h-[500px] md:h-[650px] object-cover"
+                  style={{ objectPosition: 'center 10%' }}
+                />
+              </div>
+              {/* Carré décoratif architectural en arrière-plan */}
+              <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-slate-900 -z-0 hidden md:block"></div>
+            </motion.div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <motion.div
-            variants={imageVariants}
-            whileHover={{
-              scale: 1.08,
-              rotate: [0, -3, 3, 0],
-              transition: { duration: 0.3 },
-            }}
-          >
-            <LazyImage
-              src={profileImg}
-              alt="Profil"
-              className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mb-10 shadow-lg border-4 border-purple hover:scale-105 transition-transform duration-300"
-               style={{ objectPosition: 'center 10%' }}
-              placeholder={
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-purple/20 to-pink/20 animate-pulse border-4 border-purple mb-10 shadow-lg" />
-              }
-            />
-          </motion.div>
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center mb-6"
-            variants={textVariants}
-          >
-            <span className="text-4xl md:text-4xl font-extrabold mt-12 bg-gradient-to-r from-red-700 to-red-300 to-red-200">
-              À propos de moi
-            </span>
-          </motion.h2>
-          <motion.p
-            className="text-lg text-gray-400 text-center leading-relaxed max-w-4xl mb-6"
-            variants={textVariants}
-          >
-            {about}
-          </motion.p>
-          <motion.div
-            className="text-base md:text-lg text-gray-400 border-t border-gray-300  text-center max-w-2xl space-y-4"
-            variants={textVariants}
-          >
-            <p className='"border border-purple/40"'>
-              <strong>Expertise complète :</strong> Louiscar.CRP offre une gamme complète de services en relations publiques et en maintenance système, assurant la visibilité de votre marque tout en garantissant la performance et la sécurité de vos infrastructures IT.
-            </p>
-            <p className='"border border-purple/40"'>
-              <strong>Mes cértifications:</strong> Je suis certifié en gestion de projet (PMP), en sécurité informatique (CEH), et en administration système (Linux+), ce qui me permet d’apporter une expertise technique solide à mes fonctions de chargé de relations publiques.
-            </p>
-            <p className='"border border-purple/40"'>
-              <strong>Accompagnement personnalisé :</strong> J'accompagne chaque client dans la définition de sa stratégie de communication et de maintenance, en proposant des solutions sur mesure adaptées à leurs besoins spécifiques et à leur secteur d’activité.
-            </p>
-            <p className='"border border-purple/40"'>
-              <strong>Engagement qualité :</strong> Je respecte les délais et les budgets, tout en assurant une communication transparente et régulière avec mes clients pour garantir leur satisfaction à chaque étape du projet.
-            </p>
-            <p>
-              <strong>Contactez-moi</strong> pour un devis gratuit, une démonstration, ou un rendez-vous dans nos bureaux à Kinshasa. Votre transformation digitale commence ici !
-            </p>
-          </motion.div>
+            {/* Colonne Texte - Vision de l'Architecte */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+            >
+              <motion.h4 variants={textVariants} className="text-sm tracking-[0.4em] uppercase text-slate-400 mb-4 font-bold">
+                L'Homme derrière la structure
+              </motion.h4>
+              
+              <motion.h2 variants={textVariants} className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-8 leading-tight">
+                Bâtir avec <span className="italic text-slate-500">Précision</span> & Héritage.
+              </motion.h2>
+
+              <motion.p variants={textVariants} className="text-lg text-slate-600 leading-relaxed mb-10 font-light italic">
+                "{about}"
+              </motion.p>
+
+              {/* Grille de compétences clés */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left border-t border-slate-200 pt-10">
+                <motion.div variants={textVariants}>
+                  <h5 className="font-bold text-slate-900 uppercase tracking-widest text-xs mb-3">Expertise Complète</h5>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    De la conception bioclimatique à la maîtrise d'œuvre complexe, LEGACY Architects assure une fusion entre esthétique moderne et normes techniques rigoureuses.
+                  </p>
+                </motion.div>
+
+                <motion.div variants={textVariants}>
+                  <h5 className="font-bold text-slate-900 uppercase tracking-widest text-xs mb-3">Engagement Qualité</h5>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Chaque projet est traité comme une œuvre unique, respectant strictement les budgets et les délais, avec une transparence totale envers nos partenaires.
+                  </p>
+                </motion.div>
+
+                <motion.div variants={textVariants}>
+                  <h5 className="font-bold text-slate-900 uppercase tracking-widest text-xs mb-3">Diplômes & Vision</h5>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Architecte certifié, j'intègre des solutions durables et innovantes pour répondre aux défis urbains contemporains à Kinshasa et ailleurs.
+                  </p>
+                </motion.div>
+
+                <motion.div variants={textVariants} className="bg-slate-900 p-6 text-white self-center">
+                  <p className="text-xs uppercase tracking-widest mb-2 font-bold">Prêt pour votre projet ?</p>
+                  <a href="/contact" className="text-sm border-b border-white/50 hover:border-white transition-all pb-1 italic">
+                    Demander une consultation →
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.section>
-      <GoogleMapsSection />
+      </section>
+      
+      {/* Section Maps avec un titre propre */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center mb-12">
+          <h3 className="text-2xl font-serif italic text-slate-900">Retrouvez-nous au bureau</h3>
+          <p className="text-slate-500 text-sm mt-2">Kinshasa, République Démocratique du Congo</p>
+        </div>
+        <GoogleMapsSection />
+      </section>
     </>
   );
 }

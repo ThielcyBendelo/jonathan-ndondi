@@ -22,61 +22,49 @@ export default function Footer() {
     WhatsApp: FaWhatsapp,
   };
 
-
   return (
-    <footer className="bg-dark-200 text-gray-300 py-8 mt-auto border-t border-gray-700">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo et Description */}
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple to-pink text-transparent bg-clip-text">
-                Mon Portfolio
-              </span>
+    <footer className="bg-slate-950 text-slate-300 py-16 border-t border-slate-900">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          
+          {/* Logo et Signature Professionnelle */}
+          <div className="col-span-1 md:col-span-1">
+            <h3 className="text-xl font-serif font-bold text-white tracking-widest uppercase mb-6">
+              LEGACY<span className="text-slate-500 font-light">.Architects</span>
             </h3>
-            <p className="text-sm text-gray-400">
-              Créons ensemble des expériences web exceptionnelles
+            <p className="text-sm leading-relaxed font-light text-slate-500 uppercase tracking-tighter">
+              Bâtir l'héritage de demain à travers <br /> une architecture de précision.
             </p>
           </div>
 
-          {/* Liens rapides */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold mb-4">Liens Rapides</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/home">Accueil</Link>
-              </li>
-              <li>
-            <li>
-              <Link to="/about">À propos de moi</Link> 
-            </li>
-              </li>
-              <li>
-               <Link to="/skills">Compétences</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-              <li>
-                <Link to="/experience">Expériences</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projets</Link>
-              </li>
-              <li>
-                <Link to="/services">Services</Link>
-              </li>
+          {/* Navigation Structurée */}
+          <div className="md:ml-auto">
+            <h4 className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-6">Navigation</h4>
+            <ul className="space-y-3 text-sm font-light">
+              <li><Link to="/home" className="hover:text-white transition-colors">Accueil</Link></li>
+              <li><Link to="/projects" className="hover:text-white transition-colors">Portfolio</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Expertises</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">L'Agence</Link></li>
             </ul>
           </div>
 
-          {/* Réseaux sociaux */}
-          <div className="text-center md:text-right">
-            <h4 className="text-lg font-semibold mb-4">Me Suivre</h4>
-            <div className="flex justify-center md:justify-end space-x-4">
+          {/* Contact & Bureau */}
+          <div className="md:ml-auto">
+            <h4 className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-6">Contact</h4>
+            <ul className="space-y-3 text-sm font-light">
+              <li><Link to="/contact" className="hover:text-white transition-colors">Consultation</Link></li>
+              <li><Link to="/experience" className="hover:text-white transition-colors">Parcours</Link></li>
+              <li><Link to="/skills" className="hover:text-white transition-colors">Technique</Link></li>
+            </ul>
+          </div>
+
+          {/* Réseaux et Social Connect */}
+          <div className="md:ml-auto text-left md:text-right">
+            <h4 className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-6">Suivre l'Agence</h4>
+            <div className="flex justify-start md:justify-end gap-5">
               {contact.map((item) => {
                 const Icon = socialIcons[item.label];
                 if (!Icon) return null;
-                // If the contact link is an email address (no protocol), convert to mailto
                 let href = item.link;
                 if (item.label === 'Email' && !/^mailto:/i.test(href)) {
                   href = `mailto:${href}`;
@@ -86,12 +74,8 @@ export default function Footer() {
                     key={item.label}
                     href={href}
                     target={href.startsWith('mailto:') ? undefined : '_blank'}
-                    rel={
-                      href.startsWith('mailto:')
-                        ? undefined
-                        : 'noopener noreferrer'
-                    }
-                    className="text-2xl hover:text-purple transition-colors hover:scale-110 transform duration-200"
+                    rel="noopener noreferrer"
+                    className="text-xl text-slate-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                     aria-label={item.label}
                   >
                     <Icon />
@@ -102,9 +86,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright uniquement */}
-        <div className="mt-auto pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-          <p>© {currentYear} Louiscar Ingeba | CRP . Tous droits réservés.</p>
+        {/* Copyright Minimaliste */}
+        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-slate-600">
+          <p>© {currentYear} Ibrahim Muswema | LEGACY Architects & co.</p>
+          <p className="font-light">Design & Structure par CRP</p>
         </div>
       </div>
     </footer>

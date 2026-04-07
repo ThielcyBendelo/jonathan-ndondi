@@ -440,7 +440,7 @@ VPS (MANUAL)
 ## 📊 File Structure (Security-focused)
 
 ```
-louiscar-web/
+ibramus-web/
 │
 ├── 📖 Documentation/
 │   ├── START_HERE.md ..................... COMMENCEZ ICI!

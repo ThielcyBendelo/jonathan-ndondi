@@ -1,37 +1,67 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
-    question: "Quels types de projets réalisez-vous ?",
-    answer: "Nous créons des sites web, applications mobiles, solutions cloud, design UI/UX, et proposons des services de cybersécurité et maintenance.",
+    question: "Quels types de projets gérez-vous chez LEGACY ?",
+    answer: "Nous intervenons sur des échelles variées : de la conception de résidences privées de luxe au développement de complexes commerciaux, industriels et hospitaliers, sans oublier les projets d'urbanisme public.",
   },
   {
-    question: "Quels sont vos délais de livraison ?",
-    answer: "Les délais varient selon le projet : site vitrine (2-4 semaines), e-commerce (3-6 semaines), application mobile (3-6 semaines), etc.",
+    question: "Quelle est votre approche de la maîtrise d'œuvre ?",
+    answer: "En tant qu'architecte et entrepreneur, nous assurons une gestion transversale : de l'esquisse initiale à la coordination technique sur chantier, garantissant le respect des délais et des normes de construction les plus strictes.",
   },
   {
-    question: "Proposez-vous un accompagnement après livraison ?",
-    answer: "Oui, nous assurons un support technique, des mises à jour et une maintenance selon le contrat choisi.",
+    question: "Comment se déroule la première consultation ?",
+    answer: "Nous commençons par une analyse de faisabilité et une écoute de vos besoins. Nous transformons ensuite votre vision en concepts spatiaux concrets, tout en optimisant les contraintes techniques et budgétaires.",
   },
   {
-    question: "Comment garantir la sécurité de mon projet ?",
-    answer: "Nous réalisons des audits, mettons en place des protocoles de sécurité, et assurons la conformité RGPD.",
+    question: "Proposez-vous des services de rénovation et réhabilitation ?",
+    answer: "Absolument. Nous redonnons vie à des structures existantes en alliant préservation du patrimoine et intégration de technologies modernes et durables.",
   },
 ];
 
 function FAQSection() {
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-white-500 via-black to-blue-50" id="faq">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-extrabold text-center mt-5 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text">FAQ</h2>
-        <p className="text-lg text-gray-400 mb-10 text-center">Questions fréquentes sur mes services et mon accompagnement.</p>
-        <div className="space-y-6">
+    <section className="py-24 px-6 bg-slate-950 text-white" id="faq">
+      <div className="max-w-4xl mx-auto">
+        {/* En-tête de section */}
+        <div className="text-center mb-16">
+          <h2 className="text-sm tracking-[0.4em] uppercase text-slate-500 mb-4 font-light">
+            Informations & Processus
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-serif font-bold italic">
+            Questions Fréquentes
+          </h3>
+        </div>
+
+        {/* Liste des FAQs */}
+        <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <details key={idx} className="bg-gradient-to-r from-red-500 to-red-300 to-red-200 rounded-xl shadow p-4 border border-blue-100">
-              <summary className="font-semibold text-blue-900 cursor-pointer text-lg">{faq.question}</summary>
-              <div className="mb-4 text-black-600 text-base">{faq.answer}</div>
-            </details>
+            <motion.details 
+              key={idx} 
+              className="group border-b border-slate-800 bg-transparent transition-all duration-300"
+            >
+              <summary className="flex justify-between items-center py-6 px-4 cursor-pointer list-none">
+                <span className="text-lg md:text-xl font-light tracking-wide group-open:text-slate-400 transition-colors">
+                  {faq.question}
+                </span>
+                <span className="text-2xl font-thin text-slate-500 group-open:rotate-45 transition-transform duration-300">
+                  +
+                </span>
+              </summary>
+              
+              <div className="px-4 pb-8 text-slate-400 font-light leading-relaxed text-base md:text-lg max-w-3xl">
+                {faq.answer}
+              </div>
+            </motion.details>
           ))}
+        </div>
+
+        {/* Note de fin pour contact direct */}
+        <div className="mt-16 text-center">
+          <p className="text-slate-500 text-sm italic">
+            Une question spécifique ? <a href="/contact" className="text-white border-b border-white/30 hover:border-white transition-all ml-2 pb-1">Contactez l'agence directement.</a>
+          </p>
         </div>
       </div>
     </section>

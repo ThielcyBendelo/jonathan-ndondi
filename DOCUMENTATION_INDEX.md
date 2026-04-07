@@ -245,7 +245,7 @@ racine/
 ### Pour le développement:
 
 ```
-louiscar-web/
+ibramus-web/
 ├── docs/
 │   ├── SECURITY/ ............... Guides sécurité
 │   ├── DEPLOYMENT/ ............ Guides déploiement

@@ -8,7 +8,7 @@ Ouvrir VS Code:
 
 ```bash
 # 1. Ouvrir le projet
-cd louiscar-web
+cd ibramus-web
 
 # 2. Ouvrir App.jsx
 code src/App.jsx

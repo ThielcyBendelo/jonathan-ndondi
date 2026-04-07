@@ -380,7 +380,7 @@ Votre application React est maintenant:
 ## 📁 Structure finale
 
 ```
-louiscar-web/
+ibramus-web/
 ├── src/
 │   ├── services/
 │   │   ├── securityService.js ✅

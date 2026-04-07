@@ -6,13 +6,11 @@ export const projet4 = '/images/projet4.jpg';
 export const projet5 = '/images/projet5.webp';
 export const projet6 = '/images/projet6.jpg';
 export const predictiveMaintenance = '/images/predictive-maintenance.png';
-export const profileImage = '/images/louiscar.jpeg';
-export const profile1Image = '/images/louiscar.jpeg';
-export const bgImage = '/images/background.jpg';
+export const profileImage = '/images/ibramus1.jpeg';
+export const profile1Image = '/images/ibramus.jpeg';
+export const bgImage = '/images/background.jpeg';
 export const programmationImage = '/images/image.programmation2.jpg';
-export const reactLogo = '/images/react.svg';
-export const logoImage = '/images/logolouiscar.jpeg';
-export const logoImages = '/images/logolouiscar.jpeg';
+export const logoImages = '/images/logoibra.jpeg';
 
 export const about =
   "Expert en relations publiques doté d'une solide expertise en maintenance système, j'assure la synergie entre la performance technique de nos outils et le rayonnement de notre agence. Mon rôle : garantir que nos systèmes ne tombent jamais et que nos partenariats ne cessent de croître.";
@@ -43,66 +41,53 @@ export const skills = [
 
 export const experiences = [
   {
-    role: 'Communication & Image',
-    company: 'Muamokel Agency',
-    year: '2026-Présent',
-    type: 'Stratégie de communication externe',
+   role: 'Architecte Principal & Associé Fondateur',
+    company: 'LEGACY Architects & co.',
+    year: '2026 - Présent',
+    type: 'Direction de Cabinet',
     description:
-      "Concevoir et diffuser le narratif de l'agence (expertises en code, nouvelles technologies, transformation digitale) auprès des médias et des partenaires.",
+      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
   },
-
-  {
-    role: 'Communication & Image',
-    company: 'Muamokel Agency',
-    year: '2025-Présent',
-    type: 'Événementiel et Presse ',
-    description:
-      "Organiser des webinaires, des conférences ou des lancements de produits informatiques et rédiger des communiqués de presse ciblés.",
-  },
-
-  {
-    role: 'Communication & Image',
-    company: 'Muamokel Agency',
-    year: '2025-Présent',
-    type: 'Veille et Gestion de crise',
-    description:
-      " Anticiper les risques de réputation liés à des bugs ou des cyberattaques et mettre en place des plans de communication de crise. ",
-  },
-
-  {
-    role: 'Support & Infrastructure',
-    company: 'Mwamokel Agency',
-    year: '2025-Présent',
-    type: 'Entretien du parc informatique',
-    description:
-      "Installer, configurer et mettre à jour le matériel (serveurs, PC) et les licences logicielles nécessaires au développement.",
-  },
-  {
-    role: 'Support & Infrastructure',
-    company: 'Mwamokel Agency',
-    year: '2023-Présent',
-    type: 'Sécurité et Sauvegarde',
-    description:
-      'Mettre en place des solutions de cybersécurité, gérer les VPN, les certificats SSL et assurer la pérennité des données par des sauvegardes régulières.',
-  },
-  {
-    role: 'Support & Infrastructure',
-    company: 'Mwamokel Agency',
-    year: '2025-Présent',
-    type: 'Support technique (Helpdesk)',
-    description:
-      "Diagnostiquer et réparer les pannes réseaux ou hardware pour minimiser les interruptions de service.",
-  },
-
  {
-    role: 'Support & Infrastructure',
-    company: 'Mwamokel Agency',
-    year: '2025-Présent',
-    type: 'Gestion des accès Cloud :',
+   role: 'Architecte Principal & Associé Fondateur',
+    company: 'LEGACY Architects & co.',
+    year: '2026 - Présent',
+    type: 'Direction de Cabinet',
     description:
-      "Administrer les services Cloud (Office 365, AWS, Azure) pour garantir l'accessibilité des projets n'importe où.",
+      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
   },
-
+   {
+   role: 'Architecte Principal & Associé Fondateur',
+    company: 'LEGACY Architects & co.',
+    year: '2026 - Présent',
+    type: 'Direction de Cabinet',
+    description:
+      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+  },
+   {
+   role: 'Architecte Principal & Associé Fondateur',
+    company: 'LEGACY Architects & co.',
+    year: '2026 - Présent',
+    type: 'Direction de Cabinet',
+    description:
+      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+  },
+   {
+   role: 'Architecte Principal & Associé Fondateur',
+    company: 'LEGACY Architects & co.',
+    year: '2026 - Présent',
+    type: 'Direction de Cabinet',
+    description:
+      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+  },
+   {
+   role: 'Architecte Principal & Associé Fondateur',
+    company: 'LEGACY Architects & co.',
+    year: '2026 - Présent',
+    type: 'Direction de Cabinet',
+    description:
+      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+  },
 ];
 
 export const projets = [

@@ -1,240 +1,160 @@
 import useParallax from '../hooks/useParallax';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
-
 import LazyImage from './LazyImage';
 import { useEffect, useState } from 'react';
 import notificationService from '../services/notificationService';
 import { profile1Image } from '../assets/assets.js';
-// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import { useNavigate } from 'react-router-dom';
+
+// --- SECTION SERVICES ---
+const Services = () => (
+  <section className="py-24 bg-white text-slate-900 px-6">
+    <div className="max-w-7xl mx-auto">
+      <h2 className="text-3xl font-serif mb-16 border-l-4 border-slate-900 pl-6 text-left">Nos Domaines d'Expertise</h2>
+      <div className="grid md:grid-cols-3 gap-12 text-left">
+        {[
+          { title: "Conception Architecturale", desc: "Plans détaillés et vision spatiale innovante pour projets résidentiels et commerciaux." },
+          { title: "Suivi de Chantier", desc: "Expertise technique et coordination rigoureuse pour garantir la conformité de l'exécution." },
+          { title: "Design d'Intérieur", desc: "Optimisation esthétique et fonctionnelle des espaces de vie et de travail." }
+        ].map((service, i) => (
+          <div key={i} className="group cursor-pointer border-b border-slate-200 pb-6">
+            <h3 className="text-xl font-bold mb-4 group-hover:text-slate-500 transition-colors uppercase tracking-widest">0{i+1}. {service.title}</h3>
+            <p className="text-slate-600 font-light leading-relaxed">{service.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// --- SECTION QUOTE ---
+const Quote = () => (
+  <section className="py-24 bg-slate-950 text-white text-center italic font-light px-6">
+    <div className="max-w-4xl mx-auto">
+      <p className="text-2xl md:text-3xl leading-snug">
+        "L'architecture est le témoin invisible de l'histoire. Chez LEGACY, nous concevons des structures qui traversent le temps."
+      </p>
+      <div className="mt-8 h-px w-20 bg-slate-500 mx-auto"></div>
+    </div>
+  </section>
+);
+
 export default function Hero() {
   const scrollY = useParallax();
   const [elementRef] = useIntersectionObserver();
   const navigate = useNavigate();
 
-  // Tableau des backgrounds
-  const backgrounds = [
-    '/background7.png',
-    '/background8.png',
-    '/background9.jpeg',
-  ];
+  const backgrounds = ['/background10.jpeg', '/background8.jpeg'];
   const [bgIndex, setBgIndex] = useState(0);
 
-  // Slider automatique
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 4000); // Change toutes les 4 secondes
+    }, 5000);
     return () => clearInterval(timer);
   }, [backgrounds.length]);
 
-  // Notification de bienvenue après un délai
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      notificationService.welcome();
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <section
-      ref={elementRef}
-      id="home"
-      className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 overflow-hidden"
-    >
-      {/* Background image slider */}
-      <div
-        className="absolute inset-0 w-full h-full transition-all duration-1000"
-        style={{
-          backgroundImage: `url(${backgrounds[bgIndex]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.3)',
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
-      />
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-100/90 to-dark-100/70 z-10" />
-
-      {/* Particules flottantes animées */}
-      <div className="absolute inset-0 z-15 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+    <>
+      <section
+        ref={elementRef}
+        id="home"
+        className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-slate-950"
+      >
+        {/* Background avec Parallaxe doux */}
+        <AnimatePresence mode="wait">
           <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
+            key={bgIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 w-full h-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              backgroundImage: `url(${backgrounds[bgIndex]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'brightness(0.25) grayscale(20%)',
+              transform: `translateY(${scrollY * 0.3}px)`,
             }}
           />
-        ))}
-      </div>
+        </AnimatePresence>
 
-      <div className="relative z-20">
-        {/* Profile Image avec animation sophistiquée */}
-        <AnimatedSection variant="scaleIn" delay={0.2}>
-          <div className="mb-8 flex justify-center">
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-                rotate: 5,
-                transition: { type: 'spring', stiffness: 300 },
-              }}
-              className="relative"
-            >
-              <LazyImage
-                src={profile1Image}
-                alt="Louiscar Ingeba"
-                className="w-48 h-48 md:w-62 md:h-62 rounded-full object-cover border-4 border-purple shadow-neon-purple relative z-10"
-                 style={{ objectPosition: 'center 10%' }}
-                priority={true}
-                placeholder={
-                  <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-purple to-pink animate-pulse border-4 border-purple" />
-                }
-              />
-              {/* Cercle animé autour de la photo */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-gradient-to-r from-blue-400 to-purple-500"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              />
-              <motion.div
-                className="absolute inset-[-8px] rounded-full border border-purple-400/30"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-              />
-            </motion.div>
-          </div>
-        </AnimatedSection>
+        {/* Overlay dégradé professionnel */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-slate-950 z-10" />
 
-        {/* Titre d'accueil avec animations staggered */}
-        <AnimatedSection variant="slideUp" delay={0.4}>
-          <div className="mb-8 text-center">
-            <motion.h2
-              className="text-2xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-300 to-red-200 text-transparent bg-clip-text"
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-              style={{ backgroundSize: '200% 200%' }}
-            >
-              Louiscar Ingeba
-            </motion.h2>
+        <div className="relative z-20 max-w-5xl">
+          {/* Identité visuelle - Cercle Architectural */}
+          <AnimatedSection variant="scaleIn" delay={0.2}>
+            <div className="mb-10 flex justify-center">
+              <div className="relative group">
+                <LazyImage
+                  src={profile1Image}
+                  alt="Ibrahim Muswema"
+                  className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700 border-2 border-slate-700 shadow-2xl"
+                  style={{ objectPosition: 'center 10%' }}
+                />
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-4 border-t-2 border-l-2 border-slate-500/30 rounded-full pointer-events-none"
+                />
+              </div>
+            </div>
+          </AnimatedSection>
 
-            <motion.p
-              className="text-lg md:text-2xl text-red-700 to-red-500 to-red-300 mb-5 font-medium bg-gradient-to-r from-red-400 to-purple-500 text-transparent bg-clip-text"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              Chargé Relations Publiques & Maintenance Système d'une agence de Développement informatiques                       <span>"MUAMOKEL AGENCY"</span> & Entrpreneur.
-            </motion.p>
+          {/* Titre & Hiérarchie */}
+          <AnimatedSection variant="slideUp" delay={0.4}>
+            <h2 className="text-sm md:text-lg tracking-[0.3em] uppercase mb-4 text-slate-400 font-light">
+              Architecte Principal & Entrepreneur
+            </h2>
+            
+            <h1 className="text-4xl md:text-7xl font-serif font-bold mb-6 text-white leading-tight">
+              Ibrahim <span className="text-slate-500">Muswema</span>
+            </h1>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.8, type: 'spring' }}
-            >
-              <motion.p
-                className="text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-purple-500 mb-4"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light italic leading-relaxed">
+              "Bâtir l'héritage de demain à travers une architecture de précision."
+              <br />
+              <span className="text-sm font-semibold not-italic text-white tracking-widest uppercase mt-2 block">
+                LEGACY Architects & Co
+              </span>
+            </p>
+          </AnimatedSection>
+
+          {/* Call to Actions */}
+          <AnimatedSection variant="slideUp" delay={0.8}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button
+                onClick={() => navigate('/projects')}
+                className="px-10 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-slate-200 transition-colors"
               >
-                Spécialisé en gestion de projets et support technique.
+                Explorer le Portfolio
+              </button>
+              
+              <button
+                onClick={() => navigate('/contact')}
+                className="px-10 py-4 border border-white text-white font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all"
+              >
+                Consultation Privée
+              </button>
+            </div>
+          </AnimatedSection>
+        </div>
 
-              </motion.p>
-            </motion.div>
-          </div>
-        </AnimatedSection>
+        {/* Indicateur de scroll */}
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 z-20 w-px h-12 bg-gradient-to-b from-white to-transparent"
+        />
+      </section>
 
-        {/* Boutons avec animations micro-interactions */}
-        <AnimatedSection variant="slideUp" delay={1.0}>
-          <motion.div
-            className="flex gap-4 justify-center"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.button
-              type="button"
-              onClick={() => navigate('/contact')}
-              className="group relative px-8 py-3 bg-gradient-to-r from-red-700 to-red-500 to-red-300 to-pink text-white rounded-lg overflow-hidden"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 20px 40px rgba(251, 251, 252, 0.2)',
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span className="relative z-10 font-semibold">Me contacter</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-pink-500 to-red-500"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
-
-            <motion.button
-              type="button"
-              onClick={() => navigate('/projects')}
-              className="group relative px-8 py-3 bg-dark-300 text-white rounded-lg border border-purple overflow-hidden"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 20px 40px rgba(255, 17, 17, 0.93)',
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span className="relative z-10 font-semibold">Projets</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
-                style={{ originX: 0.5, originY: 0.5 }}
-              />
-            </motion.button>
-          </motion.div>
-        </AnimatedSection>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="animate-bounce w-6 h-6 border-2 border-purple rounded-full"></div>
-      </div>
-    </section>
+      {/* Ajout des sections spécifiques demandées */}
+      <Services />
+      <Quote />
+    </>
   );
 }

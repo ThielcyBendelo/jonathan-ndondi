@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: louiscar-web
+    container_name: ibramus-web
     ports:
       - '80:80'
     environment:
