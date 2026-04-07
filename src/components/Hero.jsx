@@ -46,7 +46,7 @@ export default function Hero() {
   const [elementRef] = useIntersectionObserver();
   const navigate = useNavigate();
 
-  const backgrounds = ['/background10.jpeg', '/background8.jpeg'];
+  const backgrounds = ['/background10.jpeg', '/background8.jpeg', '/backgroud10.jpeg'];
   const [bgIndex, setBgIndex] = useState(0);
 
   useEffect(() => {

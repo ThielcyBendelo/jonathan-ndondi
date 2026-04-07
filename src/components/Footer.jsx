@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Logo et Signature Professionnelle */}
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-xl font-serif font-bold text-white tracking-widest uppercase mb-6">
-              LEGACY<span className="text-slate-500 font-light">.Architects</span>
+              LEGACY<span className="text-slate-500 font-light">ARHITECTS & CO</span>
             </h3>
             <p className="text-sm leading-relaxed font-light text-slate-500 uppercase tracking-tighter">
               Bâtir l'héritage de demain à travers <br /> une architecture de précision.

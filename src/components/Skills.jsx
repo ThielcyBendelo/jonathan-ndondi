@@ -25,6 +25,18 @@ const skillCategories = [
     ]
   },
   {
+    title: "Logiciels Maitrisés",
+    skills: [
+      { name: "AUTOCAD", icon: FaDraftingCompass },
+      { name: "MICROSOFT OFFICE", icon: FaFileContract },
+      { name: "REVIT", icon: FaCube },
+      { name: "SketchUp", icon: FaDraftingCompass },
+      { name: "LUMION", icon: FaCube },
+      { name: "VISION BIM", icon: FaTools },
+  
+    ]
+  },
+  {
     title: "Direction & Soft-Skills",
     skills: [
       { name: "Négociation & Stratégie", icon: FaUsers },

@@ -24,7 +24,7 @@ function GoogleMapsSection() {
                 <FaMapMarkerAlt className="text-slate-900 mt-1" />
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest font-bold text-slate-900">Adresse</h4>
-                  <p className="text-sm text-slate-500">Avenue Kimwenza A/, Kinshasa, RDC</p>
+                  <p className="text-sm text-slate-500">Immeuble LYS CENTRE Local, 6, 29 Avenue des Forces Armées Kinshasa Gombe, RDC</p>
                 </div>
               </div>
 
@@ -32,7 +32,8 @@ function GoogleMapsSection() {
                 <FaPhoneAlt className="text-slate-900 mt-1" />
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest font-bold text-slate-900">Contact Direct</h4>
-                  <p className="text-sm text-slate-500">+243 814 176 800</p>
+                  <p className="text-sm text-slate-500">+243 895 495 802</p>
+                   <p className="text-sm text-slate-500">+243 811 349 537</p>
                 </div>
               </div>
 
@@ -40,7 +41,7 @@ function GoogleMapsSection() {
                 <FaEnvelope className="text-slate-900 mt-1" />
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest font-bold text-slate-900">Email Professionnel</h4>
-                  <p className="text-sm text-slate-500 font-medium">ingebalouiscar@gmail.com</p>
+                  <p className="text-sm text-slate-500 font-medium">contact@legacyarchitects.org</p>
                 </div>
               </div>
             </div>
@@ -55,7 +56,7 @@ function GoogleMapsSection() {
             <div className="rounded-sm overflow-hidden shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 border border-slate-100">
               <iframe
                 title="Google Maps localisation"
-                src="https://www.google.com/maps?q=Avenue+Kimwenza+A%2FA25,+Kinshasa,+DR+Congo&output=embed"
+                src="https://www.google.com/maps?q=Immeuble+LYS+CENTRE+Local%2C+6%2C+29+Avenue+des+Forces+Armées+Kinshasa+Gombe%2C+RDC&output=embed"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}

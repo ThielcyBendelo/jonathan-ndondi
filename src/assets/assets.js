@@ -40,54 +40,65 @@ export const skills = [
 ];
 
 export const experiences = [
-  {
-   role: 'Architecte Principal & Associé Fondateur',
-    company: 'LEGACY Architects & co.',
-    year: '2026 - Présent',
-    type: 'Direction de Cabinet',
-    description:
-      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
-  },
  {
-   role: 'Architecte Principal & Associé Fondateur',
-    company: 'LEGACY Architects & co.',
-    year: '2026 - Présent',
-    type: 'Direction de Cabinet',
+   role: 'Stagiare Architecte',
+    company: 'Chez AWA',
+    year: 'Jan 2006 - Jan 2008',
+    type: 'Atélier d\'Architecture WANDJA',
     description:
-      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+      "Stage de deux ans au sein de l'Atelier d'Architecture WANDJA, spécialisé dans la conception de bâtiments résidentiels et commerciaux à Kinshasa. Participation active à toutes les phases du projet, de la conception initiale à la supervision de chantier, en mettant l'accent sur l'intégration de solutions durables et innovantes adaptées au contexte local.",
   },
    {
-   role: 'Architecte Principal & Associé Fondateur',
-    company: 'LEGACY Architects & co.',
-    year: '2026 - Présent',
-    type: 'Direction de Cabinet',
+   role: 'Architecte & Dessinateur',
+    company: 'chez MK Etanchéité',
+    year: 'Juin 2008 - Déc 2008',
+    type: 'MK Etanchéité',
     description:
-      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+      " Stage de six mois chez MK Etanchéité, entreprise spécialisée dans les solutions d'étanchéité pour les bâtiments. Responsabilités incluant la création de plans techniques détaillés, la coordination avec les équipes de chantier pour assurer la conformité des travaux d'étanchéité, et l'application de normes strictes pour garantir la durabilité et la performance des structures.",
   },
    {
-   role: 'Architecte Principal & Associé Fondateur',
-    company: 'LEGACY Architects & co.',
-    year: '2026 - Présent',
-    type: 'Direction de Cabinet',
+   role: 'Architecte',
+    company: 'UNICK Sarl',
+    year: 'Jan 2009 - Jan 2010',
+    type: 'UNICK Sarl',
     description:
-      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+      "Stage de un an chez UNICK Sarl, cabinet d'architecture renommé à Kinshasa. Implication dans la conception et la réalisation de projets architecturaux variés, avec une attention particulière portée à l'esthétique, à la fonctionnalité et à la durabilité. Collaboration étroite avec les clients pour traduire leurs visions en plans concrets, tout en respectant les contraintes techniques et budgétaires.",
   },
    {
-   role: 'Architecte Principal & Associé Fondateur',
-    company: 'LEGACY Architects & co.',
-    year: '2026 - Présent',
-    type: 'Direction de Cabinet',
+   role: 'Stagiaire Professionnel',
+    company: 'DELTA ENGINEERING',
+    year: 'Mai 2010 - Jan 2011',
+    type: 'DELTA ENGINEERING',
     description:
-      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+      "Stage de un an chez DELTA ENGINEERING, entreprise spécialisée dans les solutions d'ingénierie. Implication dans la conception et la réalisation de projets d'ingénierie variés, avec une attention particulière portée à l'esthétique, à la fonctionnalité et à la durabilité. Collaboration étroite avec les clients pour traduire leurs visions en plans concrets, tout en respectant les contraintes techniques et budgétaires.",
   },
    {
-   role: 'Architecte Principal & Associé Fondateur',
-    company: 'LEGACY Architects & co.',
-    year: '2026 - Présent',
+   role: 'Architecte - Civil Engineer',
+    company: 'Africell RDC SA',
+    year: 'Jan 2016 - Avril 2017',
+    type: '',
+    description:
+      "En tant qu'Architecte et Ingénieur Civil chez Africell RDC SA, j'ai été responsable de la conception et de la supervision de projets d'infrastructure pour les sites de télécommunication. Mon rôle comprenait la création de plans techniques détaillés, la coordination avec les équipes de construction pour assurer la conformité aux normes de sécurité et de qualité, et l'intégration de solutions innovantes pour optimiser les performances des installations tout en respectant les délais et les budgets impartis.",
+  },
+{
+   role: 'Rollout Senior Supervisor',
+    company: 'Africell RDC SA - Kinshasa',
+    year: 'Mai 2017 - Déc 2019',
+    type: 'Civil Work Manager - Africell RDC SA - Kinshasa',
+    description:
+      "En tant que Rollout Senior Supervisor chez Africell RDC SA à Kinshasa, j'ai dirigé la planification et l'exécution de projets d'infrastructure de télécommunication à grande échelle. Mon rôle comprenait la coordination des équipes de terrain, la gestion des ressources et des sous-traitants, ainsi que l'assurance de la conformité aux normes de sécurité et de qualité. J'ai également été responsable de la communication avec les parties prenantes pour garantir le respect des délais et des budgets, tout en optimisant les processus pour une efficacité maximale.",
+  },
+  {
+   role: 'Architecte Associé',
+    company: 'LEGACY ARCHITECTS & CO',
+    year: 'Jan 2020 - Présent',
     type: 'Direction de Cabinet',
     description:
-      "Pilotage de la vision architecturale et direction stratégique de l'agence. Supervision des projets de grande envergure, du narratif conceptuel à la livraison finale, en intégrant les enjeux de transformation digitale et les nouvelles technologies du bâti.",
+      "En tant qu'Architecte Associé chez LEGACY ARCHITECTS & CO, je suis responsable de la direction stratégique du cabinet, de la gestion des projets et de la supervision de l'équipe d'architectes. Mon rôle inclut la conception architecturale innovante, la coordination avec les clients pour comprendre leurs besoins et traduire leurs visions en plans concrets, ainsi que la garantie de la qualité et de la durabilité des projets réalisés. Je m'assure également que tous les projets respectent les normes techniques, les budgets et les délais impartis, tout en intégrant des solutions durables adaptées au contexte local.",
   },
+
+
+
 ];
 
 export const projets = [
@@ -192,19 +203,19 @@ export const works = [
 ];
 
 export const contact = [
-  { label: 'Email', link: 'ingebalouiscar@gmail.com' },
+  { label: 'Email', link: 'contact@legacyarchitects.org' },
   {
     label: 'LinkedIn',
-    link: 'https://linkedin.com/in/louiscar-699734222?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    link: 'https://linkedin.com/in/',
   },
   // { label: 'GitHub', link: 'https://github.com/' },
   {
     label: 'Instagram',
-    link: 'https://instagram.com/louiscarfernandez?igsh=MjB3ODdzMDI4dGto',
+    link: 'https://instagram.com/',
   },
   {
     label: 'Facebook',
-    link: 'https://facebook.com/louiscar.fernandez',
+    link: 'https://facebook.com/',
   },
   // {
   //   label: 'WhatsApp',

@@ -75,6 +75,9 @@ export default function About() {
                   <p className="text-sm text-slate-500 leading-relaxed">
                     Architecte certifié, j'intègre des solutions durables et innovantes pour répondre aux défis urbains contemporains à Kinshasa et ailleurs.
                   </p>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    En tant qu'Architecte Associé de LEGACY ARCHITECTS, ma mission est de créer des espaces qui inspirent et perdurent à travers le temps.
+                  </p>
                 </motion.div>
 
                 <motion.div variants={textVariants} className="bg-slate-900 p-6 text-white self-center">

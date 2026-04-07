@@ -8,71 +8,60 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Thème CLAIR (Par défaut) */
+    --bg: #ffffff;
+    --surface: #fcfcfc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: #e2e8f0;
+    --accent-primary: #064bbb;
+    --accent-secondary: #f81622;
+  }
+
+  [data-theme='dark'] {
+    /* Thème SOMBRE */
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --border-color: #2d2d2d;
+  }
+
   html {
     @apply scroll-smooth;
   }
+
   body {
-    @apply bg-[var(--bg)] text-[var(--muted)] m-0 p-0 box-border font-['Saira'];
-  }
-
-  /* Variables de thème par défaut (sombre) */
-  :root {
-    --bg: #0f0f0f;
-    --surface: #1a1a1a;
-    --muted: #e5e5e5;
-    --muted-2: #a3a3a3;
-    --accent-1: #320ed1;
-    --accent-2: #fd0d19;
-    --text-primary: #ffffff;
-    --text-secondary: #ffffff;
-    --border-color: #0f0f0f;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    @apply transition-colors duration-300 antialiased font-sans;
   }
 }
-:root {
-  --color-dark-100: #1a1a1a;
-  --color-dark-200: #1f1f1f;
-  --color-dark-300: #2d2d2d;
-  --color-dark-400: #3d3d3d;
-  --color-pink: #f81622;
-  --color-blue: #064bbb;
 
-  /* RGB versions for opacity support */
-  --muted-2-rgb: 61 61 61;
-  --accent-1-rgb: 139 92 246;
+@layer components {
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-secondary);
+    white-space: nowrap;
+    animation: typing 3.5s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+  }
 }
 
-/* Mode sombre (par défaut) */
-[data-theme='dark'] {
-  --bg: #0f0f0f;
-  --surface: #1a1a1a;
-  --muted: #e5e5e5;
-  --muted-2: #e5e5e5;
-  --accent-1: #ca0912;
-  --accent-2: #28b305;
-  --text-primary: #ffffff;
-  --text-secondary: #e5e5e5;
-  --border-color: #e5e5e5;
+/* Animations en dehors des layers */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-/* Mode clair */
-[data-theme='light'] {
-  --bg: #ffffff;
-  --surface: #f8fafc;
-  --muted: #0f172a;
-  --muted-2: #334155;
-  --accent-2: #140350;
-  --text-primary: #0f172a;
-  --text-secondary: #041530;
-  --border-color: #e2e8f0;
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--accent-secondary) }
 }
 
-.typewriter {
-  overflow: hidden;
-  border-right: 0.15em solid #f00909;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end 4;
-}
+  
+
 @keyframes typing {
   from {
     width: 0;

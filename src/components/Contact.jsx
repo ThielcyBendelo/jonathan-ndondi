@@ -33,7 +33,7 @@ export default function Contact() {
         from_name: formData.name,
         to_reply: formData.email,
         message: formData.message,
-        to_email: 'ingebalouiscar@gmail.com',
+        to_email: 'contact@legacyarchitects.org',
       };
 
       await send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
@@ -66,9 +66,10 @@ export default function Contact() {
             <div>
               <h4 className="text-[10px] uppercase tracking-widest font-bold text-slate-900 dark:text-white mb-6">Siège de l'Agence</h4>
               <div className="space-y-4 text-slate-500 dark:text-slate-400 font-light">
-                <p className="flex items-center gap-3"><FaMapMarkerAlt /> Avenue Kimwenza A/, Kinshasa, RDC</p>
-                <p className="flex items-center gap-3"><FaPhoneAlt /> +243 814 176 800</p>
-                <p className="flex items-center gap-3"><FaEnvelope /> ingebalouiscar@gmail.com</p>
+                <p className="flex items-center gap-3"><FaMapMarkerAlt /> Immeuble LYS CENTRE Local, 6, 29 Avenue des Forces Armées Kinshasa Gombe, RDC</p>
+                <p className="flex items-center gap-3"><FaPhoneAlt /> +243 895 495 802</p>
+                <p className="flex items-center gap-3"><FaPhoneAlt /> +243 811 349 537</p>
+                <p className="flex items-center gap-3"><FaEnvelope /> contact@legacyarchitects.org</p>
               </div>
             </div>
 
