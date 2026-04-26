@@ -6,14 +6,14 @@ export const projet4 = '/images/projet4.jpg';
 export const projet5 = '/images/projet5.webp';
 export const projet6 = '/images/projet6.jpg';
 export const predictiveMaintenance = '/images/predictive-maintenance.png';
-export const profileImage = '/images/ibramus1.jpeg';
-export const profile1Image = '/images/ibramus.jpeg';
+export const profileImage = '/images/rebeccabout.jpeg';
+export const profile1Image = '/images/prorebkul.jpeg';
 export const bgImage = '/images/background.jpeg';
 export const programmationImage = '/images/image.programmation2.jpg';
-export const logoImages = '/images/logoibra.jpeg';
+export const logoImages = '/images/logorebkul.jpeg';
 
 export const about =
-  "Expert en relations publiques doté d'une solide expertise en maintenance système, j'assure la synergie entre la performance technique de nos outils et le rayonnement de notre agence. Mon rôle : garantir que nos systèmes ne tombent jamais et que nos partenariats ne cessent de croître.";
+  "Avocate dévouée à la justice et entrepreneure passionnée, j'œuvre pour la protection des droits et l'épanouissement du leadership féminin en Afrique. À travers mes ouvrages et mes séances de coaching, je m'engage à transmettre aux femmes et à la jeunesse les outils stratégiques et juridiques nécessaires pour bâtir des projets à fort impact et transformer durablement notre société.";
 
 export const skills = [
   'Négociation',
@@ -40,66 +40,64 @@ export const skills = [
 ];
 
 export const experiences = [
- {
-   role: 'Stagiare Architecte',
-    company: 'Chez AWA',
-    year: 'Jan 2006 - Jan 2008',
-    type: 'Atélier d\'Architecture WANDJA',
+  {
+    role: "Juriste Consultante - Droit des Affaires",
+    company: "Cabinet Conseil AWA",
+    year: "2006 - 2008",
+    type: "legal",
     description:
-      "Stage de deux ans au sein de l'Atelier d'Architecture WANDJA, spécialisé dans la conception de bâtiments résidentiels et commerciaux à Kinshasa. Participation active à toutes les phases du projet, de la conception initiale à la supervision de chantier, en mettant l'accent sur l'intégration de solutions durables et innovantes adaptées au contexte local.",
-  },
-   {
-   role: 'Architecte & Dessinateur',
-    company: 'chez MK Etanchéité',
-    year: 'Juin 2008 - Déc 2008',
-    type: 'MK Etanchéité',
-    description:
-      " Stage de six mois chez MK Etanchéité, entreprise spécialisée dans les solutions d'étanchéité pour les bâtiments. Responsabilités incluant la création de plans techniques détaillés, la coordination avec les équipes de chantier pour assurer la conformité des travaux d'étanchéité, et l'application de normes strictes pour garantir la durabilité et la performance des structures.",
-  },
-   {
-   role: 'Architecte',
-    company: 'UNICK Sarl',
-    year: 'Jan 2009 - Jan 2010',
-    type: 'UNICK Sarl',
-    description:
-      "Stage de un an chez UNICK Sarl, cabinet d'architecture renommé à Kinshasa. Implication dans la conception et la réalisation de projets architecturaux variés, avec une attention particulière portée à l'esthétique, à la fonctionnalité et à la durabilité. Collaboration étroite avec les clients pour traduire leurs visions en plans concrets, tout en respectant les contraintes techniques et budgétaires.",
-  },
-   {
-   role: 'Stagiaire Professionnel',
-    company: 'DELTA ENGINEERING',
-    year: 'Mai 2010 - Jan 2011',
-    type: 'DELTA ENGINEERING',
-    description:
-      "Stage de un an chez DELTA ENGINEERING, entreprise spécialisée dans les solutions d'ingénierie. Implication dans la conception et la réalisation de projets d'ingénierie variés, avec une attention particulière portée à l'esthétique, à la fonctionnalité et à la durabilité. Collaboration étroite avec les clients pour traduire leurs visions en plans concrets, tout en respectant les contraintes techniques et budgétaires.",
-  },
-   {
-   role: 'Architecte - Civil Engineer',
-    company: 'Africell RDC SA',
-    year: 'Jan 2016 - Avril 2017',
-    type: '',
-    description:
-      "En tant qu'Architecte et Ingénieur Civil chez Africell RDC SA, j'ai été responsable de la conception et de la supervision de projets d'infrastructure pour les sites de télécommunication. Mon rôle comprenait la création de plans techniques détaillés, la coordination avec les équipes de construction pour assurer la conformité aux normes de sécurité et de qualité, et l'intégration de solutions innovantes pour optimiser les performances des installations tout en respectant les délais et les budgets impartis.",
-  },
-{
-   role: 'Rollout Senior Supervisor',
-    company: 'Africell RDC SA - Kinshasa',
-    year: 'Mai 2017 - Déc 2019',
-    type: 'Civil Work Manager - Africell RDC SA - Kinshasa',
-    description:
-      "En tant que Rollout Senior Supervisor chez Africell RDC SA à Kinshasa, j'ai dirigé la planification et l'exécution de projets d'infrastructure de télécommunication à grande échelle. Mon rôle comprenait la coordination des équipes de terrain, la gestion des ressources et des sous-traitants, ainsi que l'assurance de la conformité aux normes de sécurité et de qualité. J'ai également été responsable de la communication avec les parties prenantes pour garantir le respect des délais et des budgets, tout en optimisant les processus pour une efficacité maximale.",
+      "Analyse et sécurisation des contrats commerciaux pour des projets d'envergure à Kinshasa. Mise en place de structures juridiques préventives pour les investissements locaux et internationaux.",
   },
   {
-   role: 'Architecte Associé',
-    company: 'LEGACY ARCHITECTS & CO',
-    year: 'Jan 2020 - Présent',
-    type: 'Direction de Cabinet',
+    role: "Expert en Conformité & Réglementation",
+    company: "MK Legal Services",
+    year: "2008",
+    type: "legal",
     description:
-      "En tant qu'Architecte Associé chez LEGACY ARCHITECTS & CO, je suis responsable de la direction stratégique du cabinet, de la gestion des projets et de la supervision de l'équipe d'architectes. Mon rôle inclut la conception architecturale innovante, la coordination avec les clients pour comprendre leurs besoins et traduire leurs visions en plans concrets, ainsi que la garantie de la qualité et de la durabilité des projets réalisés. Je m'assure également que tous les projets respectent les normes techniques, les budgets et les délais impartis, tout en intégrant des solutions durables adaptées au contexte local.",
+      "Audit de conformité pour des structures professionnelles, spécialisé dans l'application des normes OHADA et la gestion des risques contractuels dans le secteur industriel.",
   },
-
-
-
+  {
+    role: "Conseillère Juridique Stratégique",
+    company: "UNICK Sarl",
+    year: "2009 - 2010",
+    type: "legal",
+    description:
+      "Accompagnement de haut niveau dans la négociation de partenariats stratégiques. Traduction des visions entrepreneuriales des clients en cadres juridiques solides et durables.",
+  },
+  {
+    role: "Spécialiste en Ingénierie Contractuelle",
+    company: "DELTA ENGINEERING",
+    year: "2010 - 2011",
+    type: "legal",
+    description:
+      "Gestion de la dimension légale de projets d'ingénierie complexes. Rédaction de protocoles d'accords et supervision de la conformité éthique et technique des engagements.",
+  },
+  {
+    role: "Directrice des Affaires Juridiques",
+    company: "Africell RDC SA",
+    year: "2016 - 2017",
+    type: "legal",
+    description:
+      "Pilotage de la conformité réglementaire pour les infrastructures télécoms. Supervision de la gestion foncière et sécurisation des actifs stratégiques du groupe en RDC.",
+  },
+  {
+    role: "Senior Manager - Stratégie & Leadership",
+    company: "Africell RDC SA - Kinshasa",
+    year: "2017 - 2019",
+    type: "coach",
+    description:
+      "Direction d'équipes pluridisciplinaires et gestion de projets à grande échelle. Développement de programmes de mentorat interne pour l'excellence opérationnelle et le leadership.",
+  },
+  {
+    role: "Avocate Associée & Mentor d'Impact",
+    company: "CABINET REBECCA KULUFIO & CO",
+    year: "2020 - Présent",
+    type: "coach",
+    description:
+      "Direction stratégique du cabinet. Experte en droit des affaires et mentorat pour femmes entrepreneures. Auteur engagée pour l'éveil de la jeunesse africaine et la transmission du savoir-faire entrepreneurial.",
+  },
 ];
+
 
 export const projets = [
   {

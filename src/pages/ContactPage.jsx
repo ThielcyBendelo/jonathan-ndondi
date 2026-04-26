@@ -7,9 +7,7 @@ export default function ContactPage() {
   return (
     <>
       <NavbarSecured />
-      <div className="mt-24">
         <Contact />
-      </div>
       <Footer />
     </>
   );

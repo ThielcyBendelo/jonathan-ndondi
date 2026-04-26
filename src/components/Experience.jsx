@@ -1,31 +1,34 @@
 import { experiences } from '../assets/assets.js';
-import { FaBuilding, FaDraftingCompass, FaHardHat, FaCheckCircle } from 'react-icons/fa';
+import { FaBalanceScale, FaBookOpen, FaUserTie, FaCheckCircle, FaAward } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
+// Sélecteur d'icônes selon le type d'expérience (Avocate / Coach / Auteur)
 const roleIcon = (type) => {
-  switch ((type || '').toLowerCase()) {
-    case 'internship':
-    case 'stage': return FaDraftingCompass;
-    case 'freelance':
-    case 'contract': return FaHardHat;
-    default: return FaCheckCircle;
-  }
+  const lower = (type || '').toLowerCase();
+  if (lower.includes('legal') || lower.includes('avocat')) return FaBalanceScale;
+  if (lower.includes('auteur') || lower.includes('book')) return FaBookOpen;
+  if (lower.includes('coach') || lower.includes('mentor')) return FaUserTie;
+  return FaCheckCircle;
 };
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-slate-50 min-h-screen">
+    <section id="experience" className="py-24 bg-white dark:bg-slate-950 min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
         
-        {/* En-tête aligné à gauche pour une structure plus forte */}
+        {/* En-tête Prestige */}
         <div className="mb-20">
-          <h2 className="text-sm tracking-[0.4em] uppercase text-slate-400 mb-2 font-bold">Chronologie</h2>
-          <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 italic">Parcours & Projets</h3>
-          <div className="h-1 w-20 bg-slate-900 mt-6"></div>
+          <h2 className="text-sm tracking-[0.4em] uppercase text-amber-600 mb-2 font-bold italic">
+            Parcours d'Excellence
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 dark:text-white">
+            Chronologie <span className="italic font-light text-slate-500">& Impact</span>
+          </h3>
+          <div className="h-1 w-20 bg-amber-600 mt-6"></div>
         </div>
 
-        {/* Container de la Timeline */}
-        <div className="relative border-l-2 border-slate-200 ml-3 md:ml-6">
+        {/* Container de la Timeline (Style Signature) */}
+        <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 md:ml-6">
           {experiences.map((exp, idx) => {
             const Icon = roleIcon(exp.type);
 
@@ -38,35 +41,35 @@ export default function Experience() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="relative mb-16 pl-10 md:pl-16"
               >
-                {/* Le Point (Le plot de construction) */}
-                <div className="absolute top-0 -left-[11px] w-5 h-5 bg-white border-2 border-slate-900 rounded-full z-10 shadow-sm" />
+                {/* Le Point (Style Sceau Doré) */}
+                <div className="absolute top-0 -left-[11px] w-5 h-5 bg-white dark:bg-slate-950 border-2 border-amber-600 rounded-full z-10" />
 
-                {/* Contenu de la carte */}
-                <div className="group bg-white p-8 rounded-sm shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:shadow-xl transition-all duration-500 border-l-4 border-slate-900">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
+                {/* Contenu de la carte (Style Cabinet) */}
+                <div className="group bg-slate-50 dark:bg-slate-900 p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 border-l-4 border-amber-600">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="p-3 bg-slate-50 text-slate-900 rounded-full group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
-                        <Icon size={22} />
+                      <div className="p-3 bg-white dark:bg-slate-800 text-amber-600 rounded-full group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                        <Icon size={20} />
                       </div>
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-amber-600 font-bold block mb-1">
                           {exp.year}
                         </span>
-                        <h3 className="text-xl font-bold text-slate-900 uppercase tracking-tighter">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white uppercase tracking-tighter font-serif">
                           {exp.role}
                         </h3>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 px-3 py-1 bg-slate-50 rounded-full">
-                      <FaBuilding size={12} className="text-slate-400" />
-                      <span className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 px-4 py-1 bg-amber-600/10 text-amber-600 rounded-full border border-amber-600/20">
+                      <FaAward size={10} />
+                      <span className="text-[10px] font-black uppercase tracking-widest">
                         {exp.company}
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-slate-500 font-light leading-relaxed text-sm md:text-base border-t border-slate-100 pt-4">
+                  <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed text-sm md:text-base border-t border-slate-200 dark:border-slate-800 pt-6 italic">
                     {exp.description}
                   </p>
                 </div>
@@ -76,9 +79,9 @@ export default function Experience() {
         </div>
 
         {/* Signature finale */}
-        <div className="mt-24 pt-8 border-t border-slate-200 text-center md:text-right">
-          <p className="text-[10px] uppercase tracking-[0.5em] text-slate-400">
-            © LEGACY Architects & co. | Archive Professionnelle
+        <div className="mt-24 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-bold">
+            Engagement • Justice • Transmission | Rebecca Kulufio
           </p>
         </div>
       </div>

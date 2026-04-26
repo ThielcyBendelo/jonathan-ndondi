@@ -3,20 +3,20 @@ import { motion } from "framer-motion";
 
 const faqs = [
   {
-    question: "Quels types de projets gérez-vous chez LEGACY ?",
-    answer: "Nous intervenons sur des échelles variées : de la conception de résidences privées de luxe au développement de complexes commerciaux, industriels et hospitaliers, sans oublier les projets d'urbanisme public.",
+    question: "Comment conciliez-vous le droit et le coaching ?",
+    answer: "Le droit apporte la structure et la protection, tandis que le coaching apporte la vision et l'action. J'aide mes clientes à bâtir des entreprises qui sont non seulement inspirantes, mais aussi juridiquement solides et pérennes.",
   },
   {
-    question: "Quelle est votre approche de la maîtrise d'œuvre ?",
-    answer: "En tant qu'architecte et entrepreneur, nous assurons une gestion transversale : de l'esquisse initiale à la coordination technique sur chantier, garantissant le respect des délais et des normes de construction les plus strictes.",
+    question: "Quels types d'accompagnement proposez-vous aux femmes ?",
+    answer: "Je propose du mentorat stratégique pour les entrepreneures : de la structuration légale de leur business au développement de leur leadership, afin de maximiser leur impact sur le continent africain.",
   },
   {
-    question: "Comment se déroule la première consultation ?",
-    answer: "Nous commençons par une analyse de faisabilité et une écoute de vos besoins. Nous transformons ensuite votre vision en concepts spatiaux concrets, tout en optimisant les contraintes techniques et budgétaires.",
+    question: "Où puis-je me procurer vos livres pour la jeunesse ?",
+    answer: "Mes ouvrages sont disponibles en commande directe sur ce site, ainsi que dans plusieurs librairies partenaires et sur les plateformes numériques majeures. Ils visent à outiller la nouvelle génération face aux défis actuels.",
   },
   {
-    question: "Proposez-vous des services de rénovation et réhabilitation ?",
-    answer: "Absolument. Nous redonnons vie à des structures existantes en alliant préservation du patrimoine et intégration de technologies modernes et durables.",
+    question: "Comment réserver une consultation juridique ou une session de coaching ?",
+    answer: "Le processus commence par une séance de diagnostic. Vous pouvez réserver votre créneau directement via le bouton 'Prendre RDV' en haut de la page pour une analyse personnalisée de votre situation.",
   },
 ];
 
@@ -26,11 +26,11 @@ function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {/* En-tête de section */}
         <div className="text-center mb-16">
-          <h2 className="text-sm tracking-[0.4em] uppercase text-slate-500 mb-4 font-light">
-            Informations & Processus
+          <h2 className="text-sm tracking-[0.4em] uppercase text-amber-600 mb-4 font-bold">
+            Assistance & Vision
           </h2>
           <h3 className="text-4xl md:text-5xl font-serif font-bold italic">
-            Questions Fréquentes
+            Réponses à vos Questions
           </h3>
         </div>
 
@@ -39,18 +39,18 @@ function FAQSection() {
           {faqs.map((faq, idx) => (
             <motion.details 
               key={idx} 
-              className="group border-b border-slate-800 bg-transparent transition-all duration-300"
+              className="group border-b border-white/5 bg-transparent transition-all duration-300"
             >
               <summary className="flex justify-between items-center py-6 px-4 cursor-pointer list-none">
-                <span className="text-lg md:text-xl font-light tracking-wide group-open:text-slate-400 transition-colors">
+                <span className="text-lg md:text-xl font-light tracking-wide group-hover:text-amber-500 transition-colors">
                   {faq.question}
                 </span>
-                <span className="text-2xl font-thin text-slate-500 group-open:rotate-45 transition-transform duration-300">
+                <span className="text-2xl font-thin text-amber-600 group-open:rotate-45 transition-transform duration-300">
                   +
                 </span>
               </summary>
               
-              <div className="px-4 pb-8 text-slate-400 font-light leading-relaxed text-base md:text-lg max-w-3xl">
+              <div className="px-4 pb-8 text-slate-400 font-light leading-relaxed text-base md:text-lg max-w-3xl border-l border-amber-900/30 ml-4">
                 {faq.answer}
               </div>
             </motion.details>
@@ -60,7 +60,10 @@ function FAQSection() {
         {/* Note de fin pour contact direct */}
         <div className="mt-16 text-center">
           <p className="text-slate-500 text-sm italic">
-            Une question spécifique ? <a href="/contact" className="text-white border-b border-white/30 hover:border-white transition-all ml-2 pb-1">Contactez l'agence directement.</a>
+            Besoin d'un échange sur mesure ? 
+            <a href="/contact" className="text-amber-500 border-b border-amber-500/30 hover:border-amber-500 transition-all ml-2 pb-1">
+              Sollicitez une rencontre privée.
+            </a>
           </p>
         </div>
       </div>

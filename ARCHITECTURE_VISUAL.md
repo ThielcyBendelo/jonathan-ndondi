@@ -440,7 +440,7 @@ VPS (MANUAL)
 ## 📊 File Structure (Security-focused)
 
 ```
-ibramus-web/
+rebkul-web/
 │
 ├── 📖 Documentation/
 │   ├── START_HERE.md ..................... COMMENCEZ ICI!

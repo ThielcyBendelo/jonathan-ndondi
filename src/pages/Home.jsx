@@ -8,10 +8,8 @@ export default function Home() {
   return (
     <>
       <NavbarSecured />
-      <div className="mt-5">
         <Hero />
         <FAQSection />
-      </div>
       <Footer />
     </>
   );

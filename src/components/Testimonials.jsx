@@ -1,249 +1,142 @@
 import React, { useState } from 'react';
-import dataService from '../services/dataService';
-import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaQuoteLeft, FaChevronLeft, FaChevronRight, FaStar, FaBalanceScale, FaLightbulb } from 'react-icons/fa';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
-// Remplacer StarRating, itemVariants par vos propres composants ou valeurs si besoin
-// import StarRating from './StarRating';
-const itemVariants = {};
 
 const initialTestimonials = [
   {
-    name: 'Alice',
-    role: 'Client',
-    company: 'Entreprise X',
-    project: 'Site Web',
-    date: '2025',
+    name: 'Sarah M.',
+    role: 'Entrepreneure',
+    category: 'Juridique',
+    date: '2024',
     rating: 5,
-    text: 'Super service, je recommande !',
+    text: "L'expertise juridique de Maître Rebecca a été déterminante pour la sécurisation de mes contrats internationaux.",
   },
-  // Ajoutez d'autres témoignages ici
+  {
+    name: 'Marcelle K.',
+    role: 'Jeune Leader',
+    category: 'Coaching',
+    date: '2023',
+    rating: 5,
+    text: "Grâce au mentorat de Rebecca, j'ai trouvé la force de lancer mon projet d'impact pour les femmes de ma communauté.",
+  },
 ];
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState(initialTestimonials);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
-  const [form, setForm] = useState({
-    name: '',
-    project: '',
-    text: '',
-    rating: 5,
-  });
+  const [filter, setFilter] = useState('Tous');
+  const [form, setForm] = useState({ name: '', category: 'Juridique', text: '', rating: 5 });
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
-  const goToNext = () => {
-    setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
-  };
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
+  // Filtrage des témoignages
+  const filteredData = filter === 'Tous' 
+    ? testimonials 
+    : testimonials.filter(t => t.category === filter);
 
-  const handleOpenModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: name === 'rating' ? Number(value) : value,
-    }));
-  };
+  const goToNext = () => setCurrentIndex((prev) => (prev === filteredData.length - 1 ? 0 : prev + 1));
+  const goToPrevious = () => setCurrentIndex((prev) => (prev === 0 ? filteredData.length - 1 : prev - 1));
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTestimonial = dataService.addTestimonial(form);
-    setTestimonials((prev) => [...prev, newTestimonial]);
-    setCurrentIndex(testimonials.length);
+    const newEntry = { ...form, date: new Date().getFullYear().toString() };
+    setTestimonials([...testimonials, newEntry]);
     setShowModal(false);
-    setForm({ name: '', project: '', text: '', rating: 5 });
+    setForm({ name: '', category: 'Juridique', text: '', rating: 5 });
   };
 
-  // Ajout de l'id testimonials pour le scroll
   return (
-    <div
-      id="testimonials"
-      className="py-20 bg-gradient-to-br from-dark-200 via-dark-100 to-dark-200"
-      style={{ zIndex: 1000 }}
-    >
-      <div className="container mx-auto px-6">
-        {/* ...existing code... */}
-        <div>
-          {/* Bouton pour ouvrir le modal d'avis */}
-          <div className="flex justify-center mb-8">
+    <section id="testimonials" className="py-24 bg-slate-950 text-white relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-5xl relative z-10">
+        
+        <div className="text-center mb-12">
+          <h2 className="text-amber-600 uppercase tracking-[0.3em] text-sm font-bold mb-4">Confiance & Impact</h2>
+          <h3 className="text-4xl md:text-5xl font-serif italic">Paroles de Clients & Coachés</h3>
+        </div>
+
+        {/* NOUVEAUTÉ : Filtres de catégories */}
+        <div className="flex justify-center gap-4 mb-12">
+          {['Tous', 'Juridique', 'Coaching'].map((cat) => (
             <button
-              onClick={handleOpenModal}
-              className="px-6 py-3 bg-purple text-white font-bold rounded shadow-lg hover:bg-purple/80 transition-all duration-300"
+              key={cat}
+              onClick={() => { setFilter(cat); setCurrentIndex(0); }}
+              className={`px-6 py-2 rounded-full border text-xs uppercase tracking-widest transition-all ${
+                filter === cat ? 'bg-amber-600 border-amber-600 text-white' : 'border-slate-800 text-slate-500'
+              }`}
             >
-              Laisser ton avis
+              {cat}
             </button>
-          </div>
-          {showModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-              <div className="bg-dark-300 rounded-2xl p-8 w-full max-w-md mx-auto relative">
-                <button
-                  onClick={handleCloseModal}
-                  className="absolute top-2 right-2 text-gray-400 hover:text-white text-2xl"
-                  aria-label="Fermer"
-                >
-                  ×
-                </button>
-                <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                  Laisse ton témoignage
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <input
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Votre nom"
-                    className="w-full px-4 py-2 border rounded bg-dark-200 text-white"
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="project"
-                    value={form.project}
-                    onChange={handleChange}
-                    placeholder="Nom du projet ou type de projet"
-                    className="w-full px-4 py-2 border rounded bg-dark-200 text-white"
-                    required
-                  />
-                  <textarea
-                    name="text"
-                    value={form.text}
-                    onChange={handleChange}
-                    placeholder="Votre témoignage"
-                    className="w-full px-4 py-2 border rounded bg-dark-200 text-white"
-                    rows={4}
-                    required
-                  />
-                  <div>
-                    <label
-                      htmlFor="rating"
-                      className="block text-gray-400 mb-1"
-                    >
-                      Note :
-                    </label>
-                    <select
-                      name="rating"
-                      id="rating"
-                      value={form.rating}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border rounded bg-dark-200 text-white"
-                    >
-                      {[5, 4, 3, 2, 1].map((n) => (
-                        <option key={n} value={n}>
-                          {n} ★
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full py-3 bg-purple text-white font-bold rounded"
-                  >
-                    Envoyer
-                  </button>
-                </form>
-              </div>
-            </div>
-          )}
-          <AnimatePresence>
-            <Motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-            >
-              <FaQuoteLeft className="text-purple/30 text-4xl mb-6" />
-              <div className="mb-6">{testimonials[currentIndex]?.rating} ★</div>
-              <blockquote className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 italic">
-                "{testimonials[currentIndex]?.text || ''}"
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple to-pink p-0.5">
-                  <div className="w-full h-full rounded-full bg-dark-300 flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {testimonials[currentIndex]?.name?.charAt(0) || ''}
-                    </span>
-                  </div>
+          ))}
+        </div>
+
+        <div className="relative min-h-[400px] flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            {filteredData.length > 0 ? (
+              <Motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="text-center w-full"
+              >
+                <FaQuoteLeft className="text-amber-600/20 text-6xl mx-auto mb-8" />
+                <div className="flex justify-center gap-1 mb-6 text-amber-500">
+                  {[...Array(filteredData[currentIndex].rating)].map((_, i) => <FaStar key={i} />)}
                 </div>
-                <div>
-                  <h4 className="text-white font-semibold text-lg">
-                    {testimonials[currentIndex]?.name || ''}
-                  </h4>
-                  <p className="text-gray-400">
-                    {testimonials[currentIndex]?.role || ''} •{' '}
-                    {testimonials[currentIndex]?.company || ''}
-                  </p>
-                  <p className="text-purple text-sm">
-                    {testimonials[currentIndex]?.project || ''} •{' '}
-                    {testimonials[currentIndex]?.date || ''}
+                <blockquote className="text-2xl md:text-3xl font-light italic leading-relaxed mb-10 max-w-3xl mx-auto">
+                  "{filteredData[currentIndex].text}"
+                </blockquote>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-full border-2 border-amber-600 flex items-center justify-center mb-4 text-xl font-serif">
+                    {filteredData[currentIndex].name.charAt(0)}
+                  </div>
+                  <h4 className="font-bold text-xl">{filteredData[currentIndex].name}</h4>
+                  <p className="text-amber-600 text-sm uppercase tracking-widest mt-1">
+                    {filteredData[currentIndex].category} • {filteredData[currentIndex].role}
                   </p>
                 </div>
-              </div>
-            </Motion.div>
+              </Motion.div>
+            ) : (
+              <p className="text-slate-500">Aucun témoignage dans cette catégorie.</p>
+            )}
           </AnimatePresence>
-          {/* Navigation buttons */}
-          <button
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-dark-400/80 backdrop-blur-sm hover:bg-purple/80 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-600/50 hover:border-purple"
-            aria-label="Témoignage précédent"
-          >
-            <FaChevronLeft />
+
+          {/* Navigation */}
+          {filteredData.length > 1 && (
+            <>
+              <button onClick={goToPrevious} className="absolute left-0 text-slate-500 hover:text-amber-600 text-3xl transition-colors"><FaChevronLeft /></button>
+              <button onClick={goToNext} className="absolute right-0 text-slate-500 hover:text-amber-600 text-3xl transition-colors"><FaChevronRight /></button>
+            </>
+          )}
+        </div>
+
+        {/* Bouton d'action */}
+        <div className="flex justify-center mt-16">
+          <button onClick={() => setShowModal(true)} className="px-8 py-4 bg-transparent border-2 border-amber-600 text-amber-600 font-bold uppercase text-xs tracking-widest hover:bg-amber-600 hover:text-white transition-all">
+            Partager votre expérience
           </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-dark-400/80 backdrop-blur-sm hover:bg-purple/80 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-gray-600/50 hover:border-purple"
-            aria-label="Témoignage suivant"
-          >
-            <FaChevronRight />
-          </button>
-          {/* Indicators */}
-          <div className="flex justify-center gap-3 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'bg-gradient-to-r from-purple to-pink scale-125'
-                    : 'bg-gray-600 hover:bg-gray-500'
-                }`}
-                aria-label={`Aller au témoignage ${index + 1}`}
-              />
-            ))}
+        </div>
+      </div>
+
+      {/* Modal personnalisé */}
+      {showModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4">
+          <div className="bg-slate-900 border border-amber-900/30 rounded-sm p-8 w-full max-w-lg shadow-2xl">
+            <h3 className="text-2xl font-serif text-white mb-6">Laisser un témoignage</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input type="text" placeholder="Votre Nom" className="w-full bg-slate-800 border-none p-3 text-white focus:ring-1 focus:ring-amber-600" required onChange={(e) => setForm({...form, name: e.target.value})} />
+              <select className="w-full bg-slate-800 border-none p-3 text-white focus:ring-1 focus:ring-amber-600" onChange={(e) => setForm({...form, category: e.target.value})}>
+                <option value="Juridique">Cabinet Juridique</option>
+                <option value="Coaching">Mentorat / Coaching</option>
+              </select>
+              <textarea placeholder="Votre message..." className="w-full bg-slate-800 border-none p-3 text-white h-32 focus:ring-1 focus:ring-amber-600" required onChange={(e) => setForm({...form, text: e.target.value})} />
+              <div className="flex gap-4">
+                <button type="button" onClick={() => setShowModal(false)} className="flex-1 py-3 text-slate-400 uppercase text-xs font-bold tracking-widest">Annuler</button>
+                <button type="submit" className="flex-1 py-3 bg-amber-600 text-white uppercase text-xs font-bold tracking-widest">Publier</button>
+              </div>
+            </form>
           </div>
         </div>
-        <Motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-          variants={itemVariants}
-        >
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">50+</div>
-            <div className="text-gray-400">Projets réalisés</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">100%</div>
-            <div className="text-gray-400">Satisfaction</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">5★</div>
-            <div className="text-gray-400">Note moyenne</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">2025</div>
-            <div className="text-gray-400">Année</div>
-          </div>
-        </Motion.div>
-      </div>
-    </div>
+      )}
+    </section>
   );
 }

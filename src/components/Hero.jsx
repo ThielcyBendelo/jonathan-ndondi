@@ -2,25 +2,38 @@ import useParallax from '../hooks/useParallax';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import LazyImage from './LazyImage';
 import { useEffect, useState } from 'react';
-import notificationService from '../services/notificationService';
 import { profile1Image } from '../assets/assets.js';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import { useNavigate } from 'react-router-dom';
+import { FaBalanceScale, FaLightbulb, FaBookOpen } from 'react-icons/fa';
 
-// --- SECTION SERVICES ---
-const Services = () => (
+// --- SECTION EXPERTISES (MAJ : Avocate / Coach / Auteur) ---
+const Expertises = () => (
   <section className="py-24 bg-white text-slate-900 px-6">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl font-serif mb-16 border-l-4 border-slate-900 pl-6 text-left">Nos Domaines d'Expertise</h2>
+      <h2 className="text-3xl font-serif mb-16 border-l-4 border-amber-600 pl-6 text-left">Piliers d'Impact</h2>
       <div className="grid md:grid-cols-3 gap-12 text-left">
         {[
-          { title: "Conception Architecturale", desc: "Plans détaillés et vision spatiale innovante pour projets résidentiels et commerciaux." },
-          { title: "Suivi de Chantier", desc: "Expertise technique et coordination rigoureuse pour garantir la conformité de l'exécution." },
-          { title: "Design d'Intérieur", desc: "Optimisation esthétique et fonctionnelle des espaces de vie et de travail." }
+          { 
+            title: "Défense Juridique", 
+            icon: <FaBalanceScale className="text-amber-600 mb-4" size={24} />,
+            desc: "Protection de vos droits et conseils stratégiques au sein de notre cabinet d'avocats." 
+          },
+          { 
+            title: "Coaching Entrepreneurial", 
+            icon: <FaLightbulb className="text-amber-600 mb-4" size={24} />,
+            desc: "Accompagnement des femmes et entrepreneurs pour bâtir des projets à fort impact." 
+          },
+          { 
+            title: "Édition & Littérature", 
+            icon: <FaBookOpen className="text-amber-600 mb-4" size={24} />,
+            desc: "Ouvrages dédiés à l'éveil de la jeunesse africaine et au leadership féminin." 
+          }
         ].map((service, i) => (
-          <div key={i} className="group cursor-pointer border-b border-slate-200 pb-6">
-            <h3 className="text-xl font-bold mb-4 group-hover:text-slate-500 transition-colors uppercase tracking-widest">0{i+1}. {service.title}</h3>
+          <div key={i} className="group cursor-pointer border-b border-slate-100 pb-8 hover:border-amber-600 transition-all">
+            {service.icon}
+            <h3 className="text-xl font-bold mb-4 uppercase tracking-widest">{service.title}</h3>
             <p className="text-slate-600 font-light leading-relaxed">{service.desc}</p>
           </div>
         ))}
@@ -29,14 +42,14 @@ const Services = () => (
   </section>
 );
 
-// --- SECTION QUOTE ---
+// --- SECTION QUOTE (MAJ : Vision Afrique/Femmes) ---
 const Quote = () => (
   <section className="py-24 bg-slate-950 text-white text-center italic font-light px-6">
     <div className="max-w-4xl mx-auto">
-      <p className="text-2xl md:text-3xl leading-snug">
-        "L'architecture est le témoin invisible de l'histoire. Chez LEGACY, nous concevons des structures qui traversent le temps."
+      <p className="text-2xl md:text-3xl leading-snug font-serif">
+        "Le véritable leadership réside dans la capacité à transformer les lois en justice, les idées en entreprises et la jeunesse en héritage pour l'Afrique."
       </p>
-      <div className="mt-8 h-px w-20 bg-slate-500 mx-auto"></div>
+      <div className="mt-8 h-px w-20 bg-amber-600 mx-auto"></div>
     </div>
   </section>
 );
@@ -46,13 +59,14 @@ export default function Hero() {
   const [elementRef] = useIntersectionObserver();
   const navigate = useNavigate();
 
-  const backgrounds = ['/background10.jpeg', '/background8.jpeg', '/backgroud10.jpeg'];
+  // Suggestion : Utilisez des images de cabinet de droit, de conférences ou de bibliothèques élégantes
+  const backgrounds = ['/background1.jpeg', '/background2.jpeg', '/background3.jpeg'];
   const [bgIndex, setBgIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, [backgrounds.length]);
 
@@ -61,99 +75,100 @@ export default function Hero() {
       <section
         ref={elementRef}
         id="home"
-        className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-slate-950"
+        className="relative min-h-screen flex flex-col justify-center items-center text-center py-24 px-6 overflow-hidden bg-slate-950"
       >
-        {/* Background avec Parallaxe doux */}
+        {/* Background Dynamique */}
         <AnimatePresence mode="wait">
           <motion.div
             key={bgIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 2 }}
             className="absolute inset-0 w-full h-full"
             style={{
               backgroundImage: `url(${backgrounds[bgIndex]})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: 'brightness(0.25) grayscale(20%)',
-              transform: `translateY(${scrollY * 0.3}px)`,
+              filter: 'brightness(0.3) contrast(110%)',
+              transform: `translateY(${scrollY * 0.2}px)`,
             }}
           />
         </AnimatePresence>
 
-        {/* Overlay dégradé professionnel */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-slate-950 z-10" />
+        {/* Overlay Signature */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/60 z-10" />
 
         <div className="relative z-20 max-w-5xl">
-          {/* Identité visuelle - Cercle Architectural */}
+          {/* Portrait Premium */}
           <AnimatedSection variant="scaleIn" delay={0.2}>
             <div className="mb-10 flex justify-center">
-              <div className="relative group">
+              <div className="relative">
                 <LazyImage
                   src={profile1Image}
-                  alt="Ibrahim Muswema"
-                  className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700 border-2 border-slate-700 shadow-2xl"
+                  alt="Rebecca Kulufio"
+                  className="w-40 h-40 md:w-60 md:h-60 rounded-full object-cover transition-all duration-1000 border-2 border-amber-600/30 shadow-[0_0_50px_rgba(217,119,6,0.2)]"
                   style={{ objectPosition: 'center 10%' }}
                 />
+                {/* Cercle Ornemental Doré */}
                 <motion.div 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-4 border-t-2 border-l-2 border-slate-500/30 rounded-full pointer-events-none"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-4 border-r-2 border-b-2 border-amber-600/20 rounded-full pointer-events-none"
                 />
               </div>
             </div>
           </AnimatedSection>
 
-          {/* Titre & Hiérarchie */}
+          {/* Titre & Identité Multi-facettes */}
           <AnimatedSection variant="slideUp" delay={0.4}>
-            <h2 className="text-sm md:text-lg tracking-[0.3em] uppercase mb-4 text-slate-400 font-light">
-              Architecte Principal & Entrepreneur
+            <h2 className="text-sm md:text-lg tracking-[0.4em] uppercase mb-4 text-amber-500 font-medium">
+              Avocate • Coach • Auteur
             </h2>
             
-            <h1 className="text-4xl md:text-7xl font-serif font-bold mb-6 text-white leading-tight">
-              Ibrahim <span className="text-slate-500">Muswema</span>
+            <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6 text-white leading-tight">
+              Rebecca <span className="italic font-light text-slate-200">Kulufio</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light italic leading-relaxed">
-              "Bâtir l'héritage de demain à travers une architecture de précision."
-              <br />
-              <span className="text-sm font-semibold not-italic text-white tracking-widest uppercase mt-2 block">
-                LEGACY Architects & Co
-              </span>
+            <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+              Défendre vos intérêts juridiques et éveiller le potentiel de la 
+              <span className="text-white font-semibold italic"> jeunesse africaine </span> 
+              et des femmes entrepreneures.
             </p>
           </AnimatedSection>
 
-          {/* Call to Actions */}
+          {/* Actions Ciblées */}
           <AnimatedSection variant="slideUp" delay={0.8}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
-                onClick={() => navigate('/projects')}
-                className="px-10 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-slate-200 transition-colors"
+                onClick={() => navigate('/services')}
+                className="px-10 py-4 bg-amber-600 text-white font-bold uppercase text-xs tracking-widest hover:bg-amber-700 transition-all shadow-xl shadow-amber-900/40"
               >
-                Explorer le Portfolio
+                Expertises & Services
               </button>
               
               <button
-                onClick={() => navigate('/contact')}
-                className="px-10 py-4 border border-white text-white font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all"
+                onClick={() => navigate('/books')}
+                className="px-10 py-4 border border-white/30 text-white font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all backdrop-blur-sm"
               >
-                Consultation Privée
+                Découvrir mes Livres
               </button>
             </div>
           </AnimatedSection>
         </div>
 
-        {/* Indicateur de scroll */}
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 z-20 w-px h-12 bg-gradient-to-b from-white to-transparent"
-        />
+        {/* Scroll Indicator Amélioré */}
+        <div className="absolute bottom-10 z-20 flex flex-col items-center gap-2">
+          <span className="text-[9px] uppercase tracking-[0.3em] text-slate-500">Explorer</span>
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="w-px h-10 bg-gradient-to-b from-amber-600 to-transparent"
+          />
+        </div>
       </section>
 
-      {/* Ajout des sections spécifiques demandées */}
-      <Services />
+      <Expertises />
       <Quote />
     </>
   );

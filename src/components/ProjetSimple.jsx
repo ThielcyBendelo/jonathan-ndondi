@@ -1,83 +1,112 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaBookOpen, FaShoppingCart, FaStar, FaGlobeAfrica } from 'react-icons/fa';
 
-const projectsData = [
-  { id: 1, title: "Villa Horizon", category: "Résidentiel", img: "/proj1.jpg" },
-  { id: 2, title: "Tour Legacy", category: "Commercial", img: "/proj2.jpg" },
-  { id: 3, title: "Hôpital Central", category: "Hospitalité", img: "/proj3.jpg" },
-  { id: 4, title: "Usine Logistique", category: "Industriel", img: "/proj4.jpg" },
-  { id: 5, title: "Bibliothèque Nationale", category: "Publique", img: "/proj5.jpg" },
-  { id: 6, title: "Analyse Urbaine", category: "Stage académique", img: "/proj6.jpg" },
+const myBooks = [
+  {
+    id: 1,
+    title: "L'Éveil du Leadership Féminin",
+    subtitle: "Guide pour la femme africaine moderne",
+    price: "25.00",
+    rating: 5,
+    cover: "/cover-book-1.jpg", // Remplacez par vos vraies images
+    description: "Un ouvrage pratique pour briser les plafonds de verre et assumer son rôle de leader dans la société actuelle.",
+    tag: "Leadership"
+  },
+  {
+    id: 2,
+    title: "Droit & Jeunesse",
+    subtitle: "Comprendre ses droits pour mieux bâtir",
+    price: "18.50",
+    rating: 5,
+    cover: "/cover-book-2.jpg",
+    description: "Vulgarisation juridique destinée à la jeunesse africaine pour une citoyenneté active et protégée.",
+    tag: "Éducation"
+  }
 ];
 
-const categories = ["Tous", "Résidentiel", "Commercial", "Industriel", "Hospitalité", "Publique", "Stage académique"];
-
-export default function ProjectGallery() {
-  const [filter, setFilter] = useState("Tous");
-
-  const filteredProjects = filter === "Tous" 
-    ? projectsData 
-    : projectsData.filter(p => p.category === filter);
-
+export default function Books() {
   return (
-    <section className="py-24 bg-slate-50 px-6">
+    <section id="books" className="py-24 bg-slate-50 dark:bg-slate-950 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="text-left">
-            <h2 className="text-sm tracking-[0.3em] uppercase text-slate-500 mb-2">Portfolio</h2>
-            <h3 className="text-4xl font-serif font-bold text-slate-900">Réalisations Sélectionnées</h3>
-          </div>
-
-          {/* Filtres de navigation */}
-          <div className="flex flex-wrap gap-4 justify-start md:justify-end">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 text-xs uppercase tracking-widest transition-all border-b-2 ${
-                  filter === cat ? "border-slate-900 text-slate-900 font-bold" : "border-transparent text-slate-400 hover:text-slate-600"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+        
+        {/* En-tête de la page */}
+        <div className="text-center mb-20">
+          <h2 className="text-amber-600 uppercase tracking-[0.4em] text-sm font-bold mb-4">
+            Publications & Pensées
+          </h2>
+          <h3 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 dark:text-white italic">
+            La Bibliothèque <span className="font-light not-italic text-slate-500">d'Impact</span>
+          </h3>
+          <p className="mt-6 text-slate-500 max-w-2xl mx-auto italic">
+            "L'écriture est l'arme la plus puissante pour transmettre des valeurs durables à la nouvelle génération."
+          </p>
         </div>
 
-        {/* Grille de projets avec Animation */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="group relative overflow-hidden bg-slate-200 aspect-[4/5] cursor-pointer"
-              >
-                {/* Image de fond */}
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110 bg-gray-300">
-                  {/* Remplacez par <img src={project.img} /> quand vos images seront prêtes */}
-                  <div className="w-full h-full flex items-center justify-center text-slate-400 italic">
-                    {project.title}
+        {/* Grille des livres */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {myBooks.map((book) => (
+            <motion.div 
+              key={book.id}
+              initial={{ opacity: 0, x: book.id % 2 === 0 ? 50 : -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col md:flex-row gap-8 bg-white dark:bg-slate-900 p-6 shadow-xl border border-slate-100 dark:border-slate-800 relative group"
+            >
+              {/* Couverture du livre */}
+              <div className="w-full md:w-64 h-96 bg-slate-200 dark:bg-slate-800 flex-shrink-0 relative overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105">
+                <div className="absolute inset-0 flex items-center justify-center text-slate-400">
+                  <FaBookOpen size={50} className="opacity-20" />
+                </div>
+                {/* <img src={book.cover} alt={book.title} className="w-full h-full object-cover relative z-10" /> */}
+                <div className="absolute top-4 right-4 z-20 bg-amber-600 text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest">
+                  {book.tag}
+                </div>
+              </div>
+
+              {/* Détails du livre */}
+              <div className="flex flex-col justify-between py-2">
+                <div>
+                  <div className="flex gap-1 text-amber-500 mb-2">
+                    {[...Array(book.rating)].map((_, i) => <FaStar key={i} size={12} />)}
                   </div>
+                  <h4 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-2">
+                    {book.title}
+                  </h4>
+                  <p className="text-amber-600 text-sm font-medium mb-4 italic">
+                    {book.subtitle}
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                    {book.description}
+                  </p>
                 </div>
 
-                {/* Overlay au survol */}
-                <div className="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-8">
-                  <span className="text-xs tracking-widest text-slate-400 uppercase mb-2">{project.category}</span>
-                  <h4 className="text-white text-2xl font-serif mb-6 text-center">{project.title}</h4>
-                  <div className="w-12 h-px bg-white mb-6"></div>
-                  <button className="text-white text-xs uppercase tracking-[0.2em] border border-white/30 px-6 py-2 hover:bg-white hover:text-black transition-all">
-                    Voir le projet
+                <div className="flex items-center justify-between mt-auto">
+                  <span className="text-2xl font-bold text-slate-900 dark:text-white">
+                    {book.price} $
+                  </span>
+                  <button className="flex items-center gap-2 bg-slate-900 dark:bg-amber-600 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-amber-700 transition-all">
+                    <FaShoppingCart /> Commander
                   </button>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Section Engagement */}
+        <div className="mt-24 p-12 bg-amber-600 text-white rounded-sm flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-amber-900/20">
+          <div className="flex items-center gap-6">
+            <FaGlobeAfrica size={60} className="opacity-50" />
+            <div>
+              <h4 className="text-2xl font-serif font-bold italic">Expédition Internationale</h4>
+              <p className="text-amber-100 text-sm">Disponible en format papier et numérique (E-book).</p>
+            </div>
+          </div>
+          <button className="px-8 py-4 border-2 border-white text-white font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-amber-600 transition-all">
+            Voir tous les points de vente
+          </button>
+        </div>
       </div>
     </section>
   );

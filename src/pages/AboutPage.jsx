@@ -7,9 +7,7 @@ export default function AboutPage() {
   return (
     <>
       <NavbarSecured />
-      <div className="mt-24">
         <About />
-      </div>
       <Footer />
     </>
   );

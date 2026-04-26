@@ -1,50 +1,87 @@
 import React from "react";
+import { FaGraduationCap, FaHandsHelping, FaGlobeAfrica, FaChevronRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-const portfolio = [
+const engagements = [
   {
-    title: "Site vitrine Tech Innov",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    description: "Refonte complète du site vitrine pour Tech Innov, avec design moderne, SEO optimisé et sécurité renforcée.",
-    tags: ["React", "SEO", "Design"],
-    link: "#",
+    title: "Éveil de la Jeunesse",
+    icon: <FaGraduationCap />,
+    image: "https://unsplash.com",
+    description: "Programmes de mentorat dans les universités pour préparer les étudiants aux réalités du marché juridique et entrepreneurial.",
+    impact: "+500 jeunes coachés",
+    tag: "Éducation",
   },
   {
-    title: "E-commerce Ecom Africa",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-    description: "Développement d'une plateforme e-commerce sur-mesure, intégration paiement sécurisé et gestion des stocks.",
-    tags: ["E-commerce", "Sécurité", "Node.js"],
-    link: "#",
+    title: "Autonomisation des Femmes",
+    icon: <FaHandsHelping />,
+    image: "https://unsplash.com",
+    description: "Accompagnement de femmes entrepreneures dans la structuration légale de leurs projets à fort impact social.",
+    impact: "30+ Entreprises créées",
+    tag: "Leadership",
   },
   {
-    title: "Application mobile StartupX",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
-    description: "Application mobile hybride pour StartupX, notifications push, design responsive et publication sur stores.",
-    tags: ["Mobile", "React Native", "UX"],
-    link: "#",
+    title: "Rayonnement Africain",
+    icon: <FaGlobeAfrica />,
+    image: "https://unsplash.com",
+    description: "Conférences et plaidoyers pour une jeunesse africaine consciente de ses droits et actrice du changement continental.",
+    impact: "Interventions Pan-Africaines",
+    tag: "Impact Social",
   },
 ];
 
 function PortfolioSection() {
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-blue-50 via-white to-gray-50" id="portfolio">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-blue-900 mb-6 drop-shadow-lg text-center">Portfolio</h2>
-        <p className="text-lg text-gray-700 mb-10 text-center">Quelques réalisations récentes pour nos clients.</p>
-        <div className="grid gap-10 md:grid-cols-3">
-          {portfolio.map((p, idx) => (
-            <div key={idx} className="bg-white rounded-2xl shadow-xl overflow-hidden border border-blue-100 hover:shadow-2xl transition flex flex-col">
-              <img src={p.image} alt={p.title} className="w-full h-48 object-cover" />
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-blue-800 mb-2">{p.title}</h3>
-                <p className="text-gray-700 mb-2">{p.description}</p>
-                <div className="mb-2 flex flex-wrap gap-2">
-                  {p.tags.map((tag, i) => (
-                    <span key={i} className="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-xs font-semibold shadow">{tag}</span>
-                  ))}
+    <section className="py-24 px-6 bg-white dark:bg-slate-950" id="engagement">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* En-tête Impact */}
+        <div className="text-center mb-20">
+          <h2 className="text-amber-600 text-sm uppercase tracking-[0.4em] font-bold mb-4">Engagement & Jeunesse</h2>
+          <h3 className="text-4xl md:text-5xl font-serif font-bold italic dark:text-white">
+            Bâtir l'Héritage <span className="font-light not-italic text-slate-500">par la Transmission</span>
+          </h3>
+          <p className="mt-6 text-slate-500 max-w-2xl mx-auto italic">
+            "Mon engagement ne s'arrête pas au prétoire ; il se poursuit sur le terrain, aux côtés de ceux qui feront l'Afrique de demain."
+          </p>
+        </div>
+
+        {/* Grille d'impact */}
+        <div className="grid gap-12 md:grid-cols-3">
+          {engagements.map((item, idx) => (
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.2 }}
+              className="group flex flex-col h-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-sm overflow-hidden hover:shadow-2xl transition-all duration-500"
+            >
+              {/* Image avec Overlay Impact */}
+              <div className="relative h-64 overflow-hidden">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                <div className="absolute bottom-4 left-4 bg-amber-600 text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest">
+                  {item.tag}
                 </div>
-                <a href={p.link} className="mt-auto inline-block text-blue-600 underline hover:text-blue-800 font-semibold transition">Voir le projet</a>
               </div>
-            </div>
+
+              {/* Contenu */}
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="text-amber-600 text-2xl mb-4">
+                  {item.icon}
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-amber-600 transition-colors uppercase tracking-tight">
+                  {item.title}
+                </h4>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                  {item.description}
+                </p>
+                
+                <div className="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center">
+                  <span className="text-xs font-bold text-amber-600 italic tracking-wide">{item.impact}</span>
+                  <FaChevronRight className="text-slate-300 group-hover:text-amber-600 group-hover:translate-x-2 transition-all" />
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

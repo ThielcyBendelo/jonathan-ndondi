@@ -245,7 +245,7 @@ racine/
 ### Pour le développement:
 
 ```
-ibramus-web/
+rebkul-web/
 ├── docs/
 │   ├── SECURITY/ ............... Guides sécurité
 │   ├── DEPLOYMENT/ ............ Guides déploiement

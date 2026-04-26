@@ -1,48 +1,46 @@
 import { motion } from 'framer-motion';
 import { 
-  FaDraftingCompass, FaCity, FaCube, FaShieldAlt, 
-  FaUsers, FaLightbulb, FaTools, FaFileContract 
+  FaBalanceScale, FaGem, FaChalkboardTeacher, FaHandshake, 
+  FaUserTie, FaRocket, FaGlobeAfrica, FaBook, 
+  FaFemale, FaChartLine, FaGavel, FaHeartbeat, FaUsers, FaLightbulb 
 } from 'react-icons/fa';
 
-// Catégories de compétences pour un Architecte Principal
+// Catégories de compétences pour Coach & Mentor
 const skillCategories = [
   {
-    title: "Conception & Urbanisme",
+    title: "Accompagnement Stratégique",
     skills: [
-      { name: "Design Architectural", icon: FaDraftingCompass },
-      { name: "Urbanisme Durable", icon: FaCity },
-      { name: "Aménagement d'Intérieur", icon: FaLightbulb },
-      { name: "Analyse Foncière", icon: FaFileContract }
+      { name: "Business Mentoring", icon: FaRocket },
+      { name: "Leadership Féminin", icon: FaFemale },
+      { name: "Stratégie de Croissance", icon: FaChartLine },
+      { name: "Éveil de la Jeunesse", icon: FaGlobeAfrica }
     ]
   },
   {
-    title: "Expertise Technique & Numérique",
+    title: "Expertise Juridique & Conformité",
     skills: [
-      { name: "Modélisation BIM", icon: FaCube },
-      { name: "Infrastructure IT / CAO", icon: FaTools },
-      { name: "Sécurité & Data Architecture", icon: FaShieldAlt },
-      { name: "Maintenance Systèmes", icon: FaTools }
+      { name: "Droit des Affaires", icon: FaGavel },
+      { name: "Structuration Légale", icon: FaBalanceScale },
+      { name: "Protection des Droits", icon: FaHandshake },
+      { name: "Conseil Éthique", icon: FaUserTie }
     ]
   },
   {
-    title: "Logiciels Maitrisés",
+    title: "Outils de Transformation",
     skills: [
-      { name: "AUTOCAD", icon: FaDraftingCompass },
-      { name: "MICROSOFT OFFICE", icon: FaFileContract },
-      { name: "REVIT", icon: FaCube },
-      { name: "SketchUp", icon: FaDraftingCompass },
-      { name: "LUMION", icon: FaCube },
-      { name: "VISION BIM", icon: FaTools },
-  
+      { name: "Ateliers de Groupe", icon: FaUsers },
+      { name: "Conférences Impact", icon: FaChalkboardTeacher },
+      { name: "Édition & Écriture", icon: FaBook },
+      { name: "Intelligence Émotionnelle", icon: FaHeartbeat }
     ]
   },
   {
-    title: "Direction & Soft-Skills",
+    title: "Soft Skills & Vision",
     skills: [
-      { name: "Négociation & Stratégie", icon: FaUsers },
-      { name: "Communication de Crise", icon: FaShieldAlt },
-      { name: "Gestion de Projet (PMP)", icon: FaFileContract },
-      { name: "Vulgarisation Technique", icon: FaLightbulb }
+      { name: "Prise de Parole", icon: FaLightbulb },
+      { name: "Résilience Entrepreneuriale", icon: FaGem },
+      { name: "Négociation Stratégique", icon: FaHandshake },
+      { name: "Gestion du Changement", icon: FaUserTie }
     ]
   }
 ];
@@ -62,14 +60,14 @@ export default function Skills() {
     <section id="skills" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-500 min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Header Style Studio */}
-        <div className="mb-20 text-center md:text-left border-l-8 border-slate-900 dark:border-white pl-8">
+        {/* Header Style Cabinet & Mentorat */}
+        <div className="mb-20 text-center md:text-left border-l-8 border-amber-600 pl-8">
           <h2 className="text-sm tracking-[0.4em] uppercase text-slate-400 font-bold mb-2">Expertises</h2>
           <h3 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 dark:text-white italic">
-            Compétences <span className="font-light not-italic text-slate-500">& Maîtrise</span>
+            Savoir-faire <span className="font-light not-italic text-amber-600">& Impact</span>
           </h3>
           <p className="text-lg text-slate-500 dark:text-slate-400 font-light max-w-2xl mt-6">
-            L'alliance entre la vision spatiale de l'architecte et la rigueur de l'ingénierie numérique.
+            L'alliance unique entre la rigueur du droit, la puissance du coaching et la vision d'auteur pour transformer votre potentiel en héritage.
           </p>
         </div>
 
@@ -83,7 +81,7 @@ export default function Skills() {
               viewport={{ once: true }}
               variants={containerVariants}
             >
-              <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-900 dark:text-white mb-10 border-b border-slate-200 dark:border-slate-800 pb-4">
+              <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-amber-600 mb-10 border-b border-slate-200 dark:border-slate-800 pb-4">
                 {category.title}
               </h4>
               
@@ -92,15 +90,15 @@ export default function Skills() {
                   <motion.div
                     key={idx}
                     variants={itemVariants}
-                    className="group flex flex-col items-center md:items-start p-8 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:bg-slate-900 dark:hover:bg-white transition-all duration-500"
+                    className="group flex flex-col items-center md:items-start p-8 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:bg-amber-600 transition-all duration-500"
                   >
-                    <div className="text-3xl mb-6 text-slate-900 dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-500">
+                    <div className="text-3xl mb-6 text-amber-600 group-hover:text-white transition-colors duration-500">
                       <skill.icon />
                     </div>
-                    <span className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400 group-hover:text-slate-300 dark:group-hover:text-slate-600 transition-colors duration-500">
+                    <span className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400 group-hover:text-white transition-colors duration-500 text-center md:text-left">
                       {skill.name}
                     </span>
-                    <div className="mt-4 h-px w-8 bg-slate-300 dark:bg-slate-700 group-hover:w-full group-hover:bg-white dark:group-hover:bg-black transition-all duration-500"></div>
+                    <div className="mt-4 h-px w-8 bg-amber-600 group-hover:w-full group-hover:bg-white transition-all duration-500"></div>
                   </motion.div>
                 ))}
               </div>
@@ -111,7 +109,7 @@ export default function Skills() {
         {/* Signature Finale */}
         <div className="mt-24 pt-12 border-t border-slate-100 dark:border-slate-800 text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-slate-400">
-            Ingénierie & Design certifiés | LEGACY Architects & co.
+            Défense • Mentorat • Transmission | Rebecca Kulufio
           </p>
         </div>
       </div>
