@@ -380,7 +380,7 @@ Votre application React est maintenant:
 ## 📁 Structure finale
 
 ```
-rebkul-web/
+jonathan-web/
 ├── src/
 │   ├── services/
 │   │   ├── securityService.js ✅

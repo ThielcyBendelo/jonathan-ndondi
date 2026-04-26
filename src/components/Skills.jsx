@@ -1,46 +1,46 @@
 import { motion } from 'framer-motion';
 import { 
-  FaBalanceScale, FaGem, FaChalkboardTeacher, FaHandshake, 
-  FaUserTie, FaRocket, FaGlobeAfrica, FaBook, 
-  FaFemale, FaChartLine, FaGavel, FaHeartbeat, FaUsers, FaLightbulb 
+  FaShieldAlt, FaRocket, FaHandshake, FaChartBar, 
+  FaUserTie, FaBuilding, FaSearchDollar, FaFileContract, 
+  FaUsers, FaLightbulb, FaBriefcase, FaMicrophoneAlt 
 } from 'react-icons/fa';
 
-// Catégories de compétences pour Coach & Mentor
+// Catégories de compétences pour Accompagnement PME & Entrepreneuriat
 const skillCategories = [
   {
-    title: "Accompagnement Stratégique",
+    title: "Ingénierie Sociale & Protection",
     skills: [
-      { name: "Business Mentoring", icon: FaRocket },
-      { name: "Leadership Féminin", icon: FaFemale },
-      { name: "Stratégie de Croissance", icon: FaChartLine },
-      { name: "Éveil de la Jeunesse", icon: FaGlobeAfrica }
+      { name: "Audit de Protection Sociale", icon: FaShieldAlt },
+      { name: "Mise en conformité CCN", icon: FaFileContract },
+      { name: "Optimisation de Branche", icon: FaSearchDollar },
+      { name: "Santé & Prévoyance Collective", icon: FaBuilding }
     ]
   },
   {
-    title: "Expertise Juridique & Conformité",
+    title: "Accompagnement du Dirigeant",
     skills: [
-      { name: "Droit des Affaires", icon: FaGavel },
-      { name: "Structuration Légale", icon: FaBalanceScale },
-      { name: "Protection des Droits", icon: FaHandshake },
-      { name: "Conseil Éthique", icon: FaUserTie }
+      { name: "Protection du Chef d'Entreprise", icon: FaUserTie },
+      { name: "Conseil en Stratégie Business", icon: FaRocket },
+      { name: "Épargne Salariale & Retraite", icon: FaChartBar },
+      { name: "Négociation Grands Comptes", icon: FaHandshake }
     ]
   },
   {
-    title: "Outils de Transformation",
+    title: "Expertise Opérationnelle",
     skills: [
-      { name: "Ateliers de Groupe", icon: FaUsers },
-      { name: "Conférences Impact", icon: FaChalkboardTeacher },
-      { name: "Édition & Écriture", icon: FaBook },
-      { name: "Intelligence Émotionnelle", icon: FaHeartbeat }
+      { name: "Gestion des Mouvements RH", icon: FaUsers },
+      { name: "Veille Réglementaire URSSAF", icon: FaBriefcase },
+      { name: "Pilotage de Sinistralité", icon: FaChartBar },
+      { name: "Audit de Charges Sociales", icon: FaSearchDollar }
     ]
   },
   {
-    title: "Soft Skills & Vision",
+    title: "Soft Skills & Leadership",
     skills: [
-      { name: "Prise de Parole", icon: FaLightbulb },
-      { name: "Résilience Entrepreneuriale", icon: FaGem },
-      { name: "Négociation Stratégique", icon: FaHandshake },
-      { name: "Gestion du Changement", icon: FaUserTie }
+      { name: "Communication Stratégique", icon: FaLightbulb },
+      { name: "Prise de Parole (Keynote)", icon: FaMicrophoneAlt },
+      { name: "Gestion de la Relation Client", icon: FaHandshake },
+      { name: "Vision Entrepreneuriale", icon: FaRocket }
     ]
   }
 ];
@@ -57,17 +57,17 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-500 min-h-screen">
+    <section id="skills" className="py-24 bg-white dark:bg-[#0f172a] transition-colors duration-500 min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Header Style Cabinet & Mentorat */}
-        <div className="mb-20 text-center md:text-left border-l-8 border-amber-600 pl-8">
-          <h2 className="text-sm tracking-[0.4em] uppercase text-slate-400 font-bold mb-2">Expertises</h2>
-          <h3 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 dark:text-white italic">
-            Savoir-faire <span className="font-light not-italic text-amber-600">& Impact</span>
+        {/* Header Institutionnel - Style Cabinet d'Expertise */}
+        <div className="mb-20 text-center md:text-left border-l-8 border-orange-500 pl-8">
+          <h2 className="text-sm tracking-[0.4em] uppercase text-slate-400 font-bold mb-2">Expertises PME</h2>
+          <h3 className="text-4xl md:text-6xl font-serif font-bold text-[#191970] dark:text-white uppercase tracking-tighter">
+            Conseil <span className="font-light italic text-orange-500">& Performance</span>
           </h3>
-          <p className="text-lg text-slate-500 dark:text-slate-400 font-light max-w-2xl mt-6">
-            L'alliance unique entre la rigueur du droit, la puissance du coaching et la vision d'auteur pour transformer votre potentiel en héritage.
+          <p className="text-lg text-slate-500 dark:text-slate-400 font-light max-w-3xl mt-6">
+            L'alliance stratégique entre l'ingénierie des assurances et l'accompagnement entrepreneurial pour sécuriser votre croissance et valoriser votre capital humain.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function Skills() {
               viewport={{ once: true }}
               variants={containerVariants}
             >
-              <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-amber-600 mb-10 border-b border-slate-200 dark:border-slate-800 pb-4">
+              <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-orange-600 mb-10 border-b border-slate-200 dark:border-slate-800 pb-4">
                 {category.title}
               </h4>
               
@@ -90,15 +90,15 @@ export default function Skills() {
                   <motion.div
                     key={idx}
                     variants={itemVariants}
-                    className="group flex flex-col items-center md:items-start p-8 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:bg-amber-600 transition-all duration-500"
+                    className="group flex flex-col items-center md:items-start p-8 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:bg-[#191970] transition-all duration-500 shadow-sm hover:shadow-2xl"
                   >
-                    <div className="text-3xl mb-6 text-amber-600 group-hover:text-white transition-colors duration-500">
+                    <div className="text-3xl mb-6 text-orange-500 group-hover:text-white transition-colors duration-500">
                       <skill.icon />
                     </div>
-                    <span className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400 group-hover:text-white transition-colors duration-500 text-center md:text-left">
+                    <span className="text-[11px] uppercase tracking-widest font-bold text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors duration-500 text-center md:text-left">
                       {skill.name}
                     </span>
-                    <div className="mt-4 h-px w-8 bg-amber-600 group-hover:w-full group-hover:bg-white transition-all duration-500"></div>
+                    <div className="mt-4 h-px w-8 bg-orange-500 group-hover:w-full group-hover:bg-orange-400 transition-all duration-500"></div>
                   </motion.div>
                 ))}
               </div>
@@ -106,10 +106,10 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Signature Finale */}
+        {/* Signature Finale - Style Expertise Parisienne */}
         <div className="mt-24 pt-12 border-t border-slate-100 dark:border-slate-800 text-center">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-slate-400">
-            Défense • Mentorat • Transmission | Rebecca Kulufio
+          <p className="text-[10px] uppercase tracking-[0.4em] text-slate-400 font-bold">
+            Audit • Protection • Croissance | Rebecca Kulufio - Paris
           </p>
         </div>
       </div>

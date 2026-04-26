@@ -523,8 +523,8 @@ netlify deploy --prod --dir=dist
 ssh user@server.com
 
 # 2. Cloner le repo
-git clone https://github.com/yourname/rebkul-web.git
-cd rebkul-web
+git clone https://github.com/yourname/jonathan-web.git
+cd jonathan-web
 
 # 3. Installer et builder
 npm install

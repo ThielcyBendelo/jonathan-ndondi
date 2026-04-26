@@ -3,34 +3,34 @@ import { motion } from "framer-motion";
 
 const faqs = [
   {
-    question: "Comment conciliez-vous le droit et le coaching ?",
-    answer: "Le droit apporte la structure et la protection, tandis que le coaching apporte la vision et l'action. J'aide mes clientes à bâtir des entreprises qui sont non seulement inspirantes, mais aussi juridiquement solides et pérennes.",
+    question: "Qu'est-ce qu'un chargé de comptes en assurances collectives ?",
+    answer: "C'est un partenaire stratégique qui gère et optimise les contrats de protection sociale (santé, prévoyance, retraite) d'une entreprise. Mon rôle est de négocier les meilleurs tarifs et garanties tout en assurant une gestion administrative fluide pour l'employeur et ses salariés.",
   },
   {
-    question: "Quels types d'accompagnement proposez-vous aux femmes ?",
-    answer: "Je propose du mentorat stratégique pour les entrepreneures : de la structuration légale de leur business au développement de leur leadership, afin de maximiser leur impact sur le continent africain.",
+    question: "Comment votre profil d'entrepreneur aide-t-il mes projets ?",
+    answer: "Ma vision entrepreneuriale me permet de comprendre vos impératifs de rentabilité et de croissance. Je ne me contente pas de gérer des risques ; je vous aide à structurer des solutions qui attirent les talents et sécurisent votre capital humain, moteur de votre business.",
   },
   {
-    question: "Où puis-je me procurer vos livres pour la jeunesse ?",
-    answer: "Mes ouvrages sont disponibles en commande directe sur ce site, ainsi que dans plusieurs librairies partenaires et sur les plateformes numériques majeures. Ils visent à outiller la nouvelle génération face aux défis actuels.",
+    question: "Proposez-vous des audits pour les entreprises basées à Paris ?",
+    answer: "Absolument. Je réalise des audits complets sur site ou à distance pour les entreprises franciliennes. L'objectif est d'identifier les carences de couverture et les opportunités d'économies sur vos contrats actuels.",
   },
   {
-    question: "Comment réserver une consultation juridique ou une session de coaching ?",
-    answer: "Le processus commence par une séance de diagnostic. Vous pouvez réserver votre créneau directement via le bouton 'Prendre RDV' en haut de la page pour une analyse personnalisée de votre situation.",
+    question: "Comment se déroule la mise en place d'une nouvelle solution ?",
+    answer: "Le processus est simple : nous commençons par un diagnostic gratuit. Si une optimisation est possible, je m'occupe de la mise en concurrence des assureurs et de la transition technique pour que l'impact sur votre temps soit minimal.",
   },
 ];
 
 function FAQSection() {
   return (
-    <section className="py-24 px-6 bg-slate-950 text-white" id="faq">
+    <section className="py-24 px-6 bg-[#191970] text-white" id="faq">
       <div className="max-w-4xl mx-auto">
         {/* En-tête de section */}
         <div className="text-center mb-16">
-          <h2 className="text-sm tracking-[0.4em] uppercase text-amber-600 mb-4 font-bold">
-            Assistance & Vision
+          <h2 className="text-sm tracking-[0.4em] uppercase text-orange-500 mb-4 font-bold">
+            Expertise & Réponses
           </h2>
-          <h3 className="text-4xl md:text-5xl font-serif font-bold italic">
-            Réponses à vos Questions
+          <h3 className="text-4xl md:text-5xl font-serif font-bold">
+            Questions Fréquentes
           </h3>
         </div>
 
@@ -39,30 +39,30 @@ function FAQSection() {
           {faqs.map((faq, idx) => (
             <motion.details 
               key={idx} 
-              className="group border-b border-white/5 bg-transparent transition-all duration-300"
+              className="group border-b border-white/10 bg-transparent transition-all duration-300"
             >
               <summary className="flex justify-between items-center py-6 px-4 cursor-pointer list-none">
-                <span className="text-lg md:text-xl font-light tracking-wide group-hover:text-amber-500 transition-colors">
+                <span className="text-lg md:text-xl font-light tracking-wide group-hover:text-orange-400 transition-colors">
                   {faq.question}
                 </span>
-                <span className="text-2xl font-thin text-amber-600 group-open:rotate-45 transition-transform duration-300">
+                <span className="text-2xl font-thin text-orange-500 group-open:rotate-45 transition-transform duration-300">
                   +
                 </span>
               </summary>
               
-              <div className="px-4 pb-8 text-slate-400 font-light leading-relaxed text-base md:text-lg max-w-3xl border-l border-amber-900/30 ml-4">
+              <div className="px-4 pb-8 text-slate-300 font-light leading-relaxed text-base md:text-lg max-w-3xl border-l border-orange-500/30 ml-4">
                 {faq.answer}
               </div>
             </motion.details>
           ))}
         </div>
 
-        {/* Note de fin pour contact direct */}
+        {/* Note de fin */}
         <div className="mt-16 text-center">
-          <p className="text-slate-500 text-sm italic">
-            Besoin d'un échange sur mesure ? 
-            <a href="/contact" className="text-amber-500 border-b border-amber-500/30 hover:border-amber-500 transition-all ml-2 pb-1">
-              Sollicitez une rencontre privée.
+          <p className="text-slate-400 text-sm italic">
+            Une problématique spécifique ? 
+            <a href="/contact" className="text-orange-500 border-b border-orange-500/30 hover:border-orange-500 transition-all ml-2 pb-1 font-bold">
+              Planifions un échange stratégique.
             </a>
           </p>
         </div>

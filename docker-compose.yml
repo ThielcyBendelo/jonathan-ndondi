@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: rebkul-web
+    container_name: jonathan-web
     ports:
       - '80:80'
     environment:

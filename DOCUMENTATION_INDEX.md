@@ -245,7 +245,7 @@ racine/
 ### Pour le développement:
 
 ```
-rebkul-web/
+jonathan-web/
 ├── docs/
 │   ├── SECURITY/ ............... Guides sécurité
 │   ├── DEPLOYMENT/ ............ Guides déploiement

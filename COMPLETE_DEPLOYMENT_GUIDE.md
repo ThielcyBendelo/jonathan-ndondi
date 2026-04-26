@@ -254,8 +254,8 @@ vercel --prod
 ssh user@server.com
 
 # 2. Cloner le repo
-git clone https://github.com/yourname/rebkul-web.git
-cd rebkul-web
+git clone https://github.com/yourname/jonathan-web.git
+cd jonathan-web
 
 # 3. Installer et builder
 npm install
@@ -455,7 +455,7 @@ docker-compose up -d
 
 # 4. Vérifier la santé
 docker ps
-docker logs rebkul-web
+docker logs jonathan-web
 ```
 
 **Avantages:**
@@ -480,8 +480,8 @@ sudo apt install -y nginx
 
 # 4. Cloner le repo
 cd /home/user
-git clone https://github.com/yourname/rebkul-web.git
-cd rebkul-web
+git clone https://github.com/yourname/jonathan-web.git
+cd jonathan-web
 
 # 5. Installer les dépendances
 npm ci
