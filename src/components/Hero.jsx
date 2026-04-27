@@ -178,7 +178,7 @@ export default function Hero() {
               Assurances Collectives • Entrepreneur • Paris
             </h2>
             <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6 text-white leading-tight">
-              Jonathan Booto <span className="italic font-light text-slate-200">Ndondi</span>
+              Jonathan Booto <span className="italic font-light text-orange-500">Ndondi</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
               Expert en <span className="text-white font-semibold">gestion de comptes</span> et ingénierie sociale pour les entreprises qui façonnent demain.
