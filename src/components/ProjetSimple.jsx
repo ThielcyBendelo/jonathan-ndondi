@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import repo1 from '../assets/repo1.jpeg'; 
+import repo2 from '../assets/repo2.jpeg'; 
 import { FaChartLine, FaShieldAlt, FaArrowRight, FaBuilding, FaCheckCircle } from 'react-icons/fa';
 
 const projects = [
@@ -12,7 +14,7 @@ const projects = [
     description: "Refonte complète du régime de frais de santé obligatoire. Mise en conformité avec la nouvelle CCN et déploiement d'un panier de soins haute performance.",
     metrics: ["Audit CCN complet", "Négociation assureur", "Accompagnement RH"],
     icon: <FaShieldAlt />,
-    image: "/path-to-your-image-1.jpg" // Insérez votre image ici
+    image: repo1, // Insérez votre image ici
   },
   {
     id: 2,
@@ -23,7 +25,7 @@ const projects = [
     description: "Mise en sécurité juridique des contrats de prévoyance suite à une fusion-acquisition. Alignement des garanties et sécurisation du passif social.",
     metrics: ["Sécurisation juridique", "Standardisation groupe", "Économie d'échelle"],
     icon: <FaChartLine />,
-    image: "/path-to-your-image-2.jpg" // Insérez votre image ici
+    image: repo2,  // Insérez votre image ici
   }
 ];
 
