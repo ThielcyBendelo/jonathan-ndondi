@@ -26,7 +26,7 @@ function GoogleMapsSection() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest font-black text-[#191970] dark:text-white mb-1">Zone d'intervention</h4>
-                  <p className="text-sm text-slate-500 font-light">Paris & Île-de-France (Déplacements en entreprise)</p>
+                  <p className="text-sm text-slate-500 font-light">109, Rue d'Égalité, 78800 Houilles(Déplacements en entreprise)</p>
                 </div>
               </div>
 
@@ -47,7 +47,7 @@ function GoogleMapsSection() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest font-black text-[#191970] dark:text-white mb-1">Contact Direct</h4>
-                  <p className="text-sm text-slate-500 font-medium">contact@votre-domaine.com</p>
+                  <p className="text-sm text-slate-500 font-medium">jonathanbooto@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -59,28 +59,35 @@ function GoogleMapsSection() {
             <div className="absolute -top-4 -right-4 w-32 h-32 border-t border-r border-orange-500/30 pointer-events-none"></div>
             
             <div className="relative rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 dark:border-slate-800">
-              <iframe
-                title="Google Maps Paris"
-                src="https://google.com"
-                width="100%"
-                height="500"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale contrast-125 saturate-50 hover:grayscale-0 transition-all duration-1000"
-              ></iframe>
+  <iframe
+    title="Localisation Cabinet Houilles"
+    src="https://google.com"
+    width="100%"
+    height="500"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="grayscale contrast-125 saturate-50 hover:grayscale-0 transition-all duration-1000"
+  ></iframe>
+  
+  {/* Overlay Signature pour confirmer l'adresse */}
+  <div className="absolute bottom-6 right-6 bg-[#191970] text-white p-4 shadow-2xl border-l-4 border-orange-500 hidden md:block">
+    <p className="text-[10px] uppercase tracking-widest font-bold">Siège Social / Bureau</p>
+    <p className="text-[9px] text-orange-400">109, Rue d'Égalité, 78800 Houilles</p>
+  </div>
+</div>
+
               
               {/* Overlay Signature */}
               <div className="absolute bottom-6 right-6 bg-[#191970] text-white p-4 shadow-2xl border-l-4 border-orange-500">
-                <p className="text-[10px] uppercase tracking-widest font-bold">Rebecca Kulufio</p>
+                <p className="text-[10px] uppercase tracking-widest font-bold">Jonathan Booto</p>
                 <p className="text-[9px] text-orange-400">Expert Assurances & Entrepreneuriat</p>
               </div>
             </div>
           </div>
 
         </div>
-      </div>
     </section>
   );
 }

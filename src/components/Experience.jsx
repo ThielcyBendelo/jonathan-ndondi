@@ -70,9 +70,18 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed text-sm md:text-base border-t border-slate-200 dark:border-slate-800 pt-6">
-                    {exp.description}
-                  </p>
+<div className="text-slate-600 dark:text-slate-400 font-light leading-relaxed text-sm md:text-base border-t border-slate-200 dark:border-slate-800 pt-6">
+  <ul className="space-y-3 mt-4">
+    {exp.descriptions.map((point, i) => (
+      <li key={i} className="flex items-start gap-2">
+        <span className="text-orange-500 font-bold">•</span>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+
                 </div>
               </motion.div>
             );

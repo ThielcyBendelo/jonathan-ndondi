@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Signature Professionnelle */}
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-xl font-serif font-bold text-white tracking-widest uppercase mb-6">
-              REBECCA<span className="text-orange-500 font-light italic"> KULUFIO</span>
+              Jonathan<span className="text-orange-500 font-light italic"> Booto</span>
             </h3>
             <p className="text-[10px] leading-relaxed font-light text-slate-500 uppercase tracking-widest">
               Assurances Collectives <br />
@@ -91,7 +91,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-slate-600">
-          <p>© {currentYear} Jonathan Booto | Experte Assurance Paris.</p>
+          <p>© {currentYear} Jonathan Booto 0650092569| Expert Assurance Paris.</p>
           <p className="font-light">Sécuriser l'humain pour libérer la croissance</p>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function NavbarSecured({ theme, toggleTheme, isAuthenticated }) {
       label: "Entrepreneuriat",
       items: [
         { label: "Mon Accueil", href: "/", icon: <FaHome /> },
-        { label: "Ma Vision", href: "/about", icon: <FaLightbulb /> },
+        { label: "About", href: "/about", icon: <FaLightbulb /> },
         { label: "Parcours", href: "/experience", icon: <FaFileContract /> },
         { label: "Projets & Impact", href: "/projects", icon: <FaChartLine /> },
         { label: "Blog Business", href: "/blog", icon: <FaPenNib /> },

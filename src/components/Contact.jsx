@@ -35,7 +35,7 @@ export default function Contact() {
         subject: formData.subject,
         to_reply: formData.email,
         message: formData.message,
-        to_email: 'votre-mail-pro@domaine.fr',
+        to_email: 'jonathanbooto@gmail.com',
       };
 
       await send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
@@ -68,9 +68,9 @@ export default function Contact() {
             <div>
               <h4 className="text-[10px] uppercase tracking-widest font-black text-orange-500 mb-6">Expertise Parisienne</h4>
               <div className="space-y-6 text-slate-500 dark:text-slate-400 font-light text-sm">
-                <p className="flex items-start gap-3"><FaMapMarkerAlt className="mt-1 text-orange-500"/> Paris & Île-de-France (Déplacements en entreprise)</p>
-                <p className="flex items-center gap-3"><FaPhoneAlt className="text-orange-500"/> +33 [Votre Numéro]</p>
-                <p className="flex items-center gap-3"><FaEnvelope className="text-orange-500"/> contact@rebeccakulufio.fr</p>
+                <p className="flex items-start gap-3"><FaMapMarkerAlt className="mt-1 text-orange-500"/> Paris & Rue d'égalité (Déplacements en entreprise)</p>
+                <p className="flex items-center gap-3"><FaPhoneAlt className="text-orange-500"/> +33 6 50 09 25 69</p>
+                <p className="flex items-center gap-3"><FaEnvelope className="text-orange-500"/> jonathanbooto@gmail.com</p>
                 <p className="flex items-center gap-3"><FaClock className="text-orange-500"/> Lun - Ven: 08h30 - 18h30</p>
               </div>
             </div>

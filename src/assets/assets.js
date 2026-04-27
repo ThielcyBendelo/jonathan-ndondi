@@ -6,11 +6,14 @@ export const projet4 = '/images/projet4.jpg';
 export const projet5 = '/images/projet5.webp';
 export const projet6 = '/images/projet6.jpg';
 export const predictiveMaintenance = '/images/predictive-maintenance.png';
-export const profileImage = '/images/rebeccabout.jpeg';
-export const profile1Image = '/images/prorebkul.jpeg';
+export const profileImage = '/images/proabout.jpeg';
+export const profile1Image = '/images/probooto.jpeg';
 export const bgImage = '/images/background.jpeg';
 export const programmationImage = '/images/image.programmation2.jpg';
-export const logoImages = '/images/logorebkul.jpeg';
+export const logoImages = '/images/logojo.jpeg';
+export const repo1 = '/images/repo1.jpeg';
+export const repo2 = '/images/repo2.jpeg';
+export const repo3 = '/images/repo3.jpeg';
 
 export const about =
   "Avocate dévouée à la justice et entrepreneure passionnée, j'œuvre pour la protection des droits et l'épanouissement du leadership féminin en Afrique. À travers mes ouvrages et mes séances de coaching, je m'engage à transmettre aux femmes et à la jeunesse les outils stratégiques et juridiques nécessaires pour bâtir des projets à fort impact et transformer durablement notre société.";
@@ -41,61 +44,71 @@ export const skills = [
 
 export const experiences = [
   {
-    role: "Juriste Consultante - Droit des Affaires",
-    company: "Cabinet Conseil AWA",
-    year: "2006 - 2008",
-    type: "legal",
-    description:
-      "Analyse et sécurisation des contrats commerciaux pour des projets d'envergure à Kinshasa. Mise en place de structures juridiques préventives pour les investissements locaux et internationaux.",
+    year: "Mars 2026",
+    role: "Ingénieur Conseil -Santé et Prévoyance collectives",
+    company: "PLENITA",
+    type: "conseil",
+    // On transforme la description en un tableau de points
+    descriptions: [
+      "Conseil auprès d'entreprises dans la conception, la mise en place et l'optimisation de leurs regimes de protection sociale collective.",
+      "Analyse des besoins des DRH, CSE et directions financière et diagnostic des regimes existants.",
+      "Vérification de la conformité réglementaire des dispositifs (ANI, conventions collectives, obligations sociales).",
+      "Pilotage d’appels d’offres assureurs : rédaction des cahiers des charges, consultation du marché et analyse comparative des offres.",
+      "Négociation des conditions techniques et tarifaires avec les organismes assureurs.",
+      "Préparation et présentation de bilans techniques annuels et recommandations d’optimisation des régimes.",
+      "Développement commercial : prospection d’entreprises (+50 salariés) et promotion du rôle de conseil du cabinet.",
+      "Participation à la rédaction d’appels d’offres et réponses aux consultations.",
+      "Veille réglementaire et analyse des évolutions du marché de la protection sociale.",
+    ]
   },
-  {
-    role: "Expert en Conformité & Réglementation",
-    company: "MK Legal Services",
-    year: "2008",
-    type: "legal",
-    description:
-      "Audit de conformité pour des structures professionnelles, spécialisé dans l'application des normes OHADA et la gestion des risques contractuels dans le secteur industriel.",
+    {
+    year: "Septembre 2022 - Février 2026",
+    role: "Chargé de clientèle - Assurance de personnes - secteur public",
+    company: "WILLIS TOWERS WATSON (WTW, Ex-GRAS SAVOYE)",
+    type: "gestion",
+    // On transforme la description en un tableau de points
+    descriptions: [
+      "Gestion, saturation du portefeuille et prospection.",
+      "Suivi du portefeuille clients (247 clients, 80 rendez-vous clients par an) : Proposition d’une véritable approche conseil après identification, analyse, et compréhension des besoins et enjeux des clients, alerte sur les évolutions juridiques pouvant avoir un impact sur les contrats.",
+      "Analyse des opportunités de développement et préparation d’un plan d’action dans le cadre des objectifs commerciaux",
+      "Réponse aux appels d’offres lancés par les clients et les prospects (au minimum 80 par an).",
+      "Participation à la négociation dans l’activité de placement auprès des organismes assureurs.",
+      "Reporting de l’activité et présentation des résultats aux clients.",
+      "Participation aux projets transverses du groupe.",
+    ]
   },
-  {
-    role: "Conseillère Juridique Stratégique",
-    company: "UNICK Sarl",
-    year: "2009 - 2010",
-    type: "legal",
-    description:
-      "Accompagnement de haut niveau dans la négociation de partenariats stratégiques. Traduction des visions entrepreneuriales des clients en cadres juridiques solides et durables.",
+    {
+    year: "Avril 2021 - Août 2022 ",
+    role: " Juriste en Protection sociale & Droit des assurances",
+    company: " COLONNA BROKER, Courtier spécialisé en santé et prévoyance",
+    type: "juridique",
+    // On transforme la description en un tableau de points
+    descriptions: [
+      "Conseil auprès des différents services opérationnels et clients",
+      "Mise en conformité réglementaire et conventionnelle (conventions collectives nationales)",
+      "Gestion de portefeuille (mise à jour de la documentation contractuelle, suivi de l’évolution du portefeuille).",
+      "Rédaction des actes de mise en place (accords collectifs, décisions unilatérales de l‘employeur)",
+      "Réalisation des cartographies des garanties d’un portefeuille (Analyse de la conformité des régimes et des actes de mise en place).",
+      "Réalisation des comparatifs des garanties.",
+      "Étude des conventions de distribution (co-courtage et partenariat).",
+      "Analyse des cahiers de charges.",
+      "Validation des contrats d’assurances et avenants.",
+      "Suivi des pièces contractuelles",
+    ]
   },
-  {
-    role: "Spécialiste en Ingénierie Contractuelle",
-    company: "DELTA ENGINEERING",
-    year: "2010 - 2011",
-    type: "legal",
-    description:
-      "Gestion de la dimension légale de projets d'ingénierie complexes. Rédaction de protocoles d'accords et supervision de la conformité éthique et technique des engagements.",
-  },
-  {
-    role: "Directrice des Affaires Juridiques",
-    company: "Africell RDC SA",
-    year: "2016 - 2017",
-    type: "legal",
-    description:
-      "Pilotage de la conformité réglementaire pour les infrastructures télécoms. Supervision de la gestion foncière et sécurisation des actifs stratégiques du groupe en RDC.",
-  },
-  {
-    role: "Senior Manager - Stratégie & Leadership",
-    company: "Africell RDC SA - Kinshasa",
-    year: "2017 - 2019",
-    type: "coach",
-    description:
-      "Direction d'équipes pluridisciplinaires et gestion de projets à grande échelle. Développement de programmes de mentorat interne pour l'excellence opérationnelle et le leadership.",
-  },
-  {
-    role: "Avocate Associée & Mentor d'Impact",
-    company: "CABINET REBECCA KULUFIO & CO",
-    year: "2020 - Présent",
-    type: "coach",
-    description:
-      "Direction stratégique du cabinet. Experte en droit des affaires et mentorat pour femmes entrepreneures. Auteur engagée pour l'éveil de la jeunesse africaine et la transmission du savoir-faire entrepreneurial.",
-  },
+    {
+    year: "Novembre 2020 - février 2021",
+    role: "Juriste en Droit des assurances",
+    company: "CHOISEZ & ASSOCIES, Cabinet d’Avocats spécialisé en droit des assurances de dommage (Biens et RC)",
+    type: "juridique",
+    // On transforme la description en un tableau de points
+    descriptions: [
+      "Participation au traitement des dossiers.",
+      "Participation à la rédaction d’actes juridiques et de procédures (Assignation, conclusions, conventions d’honoraires, mise en demeure).",
+      "Réalisation des recherches juridiques",
+      "Veille juridique.",
+    ]
+  }
 ];
 
 
@@ -201,7 +214,7 @@ export const works = [
 ];
 
 export const contact = [
-  { label: 'Email', link: 'contact@legacyarchitects.org' },
+  { label: 'Email', link: 'jonathanbooto@gmail.com' },
   {
     label: 'LinkedIn',
     link: 'https://linkedin.com/in/',

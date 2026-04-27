@@ -1,4 +1,7 @@
 import { FaChartLine, FaUsers, FaUserShield, FaHandshake, FaSyncAlt } from 'react-icons/fa';
+import repo1 from '../assets//repo1.jpeg'; 
+import repo2 from '../assets/repo2.jpeg';
+import repo3 from '../assets/repo3.jpeg';
 import { motion } from 'framer-motion';
 
 const managementSteps = [
@@ -6,21 +9,21 @@ const managementSteps = [
     title: "Pilotage & Reporting Trimestriel",
     type: "Suivi Actif",
     icon: <FaChartLine />,
-    image: "/path-to-reporting-image.jpg", // Remplacez par vos images
+    image: repo1, // Remplacez par vos images
     description: "Analyse détaillée de la sinistralité et du rapport Prestations/Cotisations pour anticiper les évolutions tarifaires."
   },
   {
     title: "Gestion des Mouvements Salariés",
     type: "Administration",
     icon: <FaUsers />,
-    image: "/path-to-hr-image.jpg", // Remplacez par vos images
+    image: repo2, // Remplacez par vos images
     description: "Externalisation complète de l'affiliation et de la radiation de vos collaborateurs pour soulager votre service RH."
   },
   {
     title: "Veille Juridique & Conventionnelle",
     type: "Conformité",
     icon: <FaUserShield />,
-    image: "/path-to-compliance-image.jpg", // Remplacez par vos images
+    image: repo3, // Remplacez par vos images
     description: "Mise à jour constante de vos contrats face aux évolutions de la Loi de Financement de la Sécurité Sociale et des CCN."
   }
 ];

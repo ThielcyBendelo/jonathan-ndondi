@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { profileImage as jonathan } from '../assets/assets.js';
 import { motion } from 'framer-motion';
 import { FaSearch, FaArrowLeft, FaRegClock, FaChevronRight, FaFilter, FaNewspaper } from 'react-icons/fa';
 import Footer from '../components/Footer';
@@ -81,7 +82,7 @@ export default function Blog() {
           <div className="grid lg:grid-cols-2 gap-0 bg-slate-50 dark:bg-slate-900 rounded-sm overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl">
             <div className="h-[300px] lg:h-full relative overflow-hidden">
                <img 
-                 src="https://unsplash.com" 
+                 src={jonathan}
                  alt="Audit Assurance"
                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                />

@@ -7,12 +7,12 @@ export default function ProfessionalSplashScreen({ onComplete }) {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
-  // Étapes de chargement version Cabinet & Mentorat
+  // Étapes version Assurances & Entrepreneuriat
   const loadingSteps = useMemo(() => [
-    { label: 'ANALYSE DU CADRE JURIDIQUE', duration: 800 },
-    { label: 'PRÉPARATION DU DOSSIER STRATÉGIQUE', duration: 1000 },
-    { label: 'ÉVALUATION DU POTENTIEL D\'IMPACT', duration: 700 },
-    { label: 'FINALISATION DE L\'EXPÉRIENCE', duration: 500 },
+    { label: 'ANALYSE DE LA PROTECTION SOCIALE', duration: 800 },
+    { label: 'AUDIT DE CONFORMITÉ CCN', duration: 1000 },
+    { label: 'OPTIMISATION DU CAPITAL HUMAIN', duration: 700 },
+    { label: 'SÉCURISATION DES ACTIFS', duration: 500 },
   ], []);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ProfessionalSplashScreen({ onComplete }) {
             clearInterval(progressInterval);
             return target;
           }
-          return prev + 0.8; // Progression un peu plus rapide
+          return prev + 1.2; // Légèrement plus nerveux
         });
       }, 20);
 
@@ -53,16 +53,16 @@ export default function ProfessionalSplashScreen({ onComplete }) {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0a0a] text-white font-sans"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0f172a] text-white font-sans"
         >
-          {/* Logo Central avec lueur Ambre */}
+          {/* Logo Central avec lueur Orange */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="mb-12 relative"
           >
-            <img src={logoImages} alt="Logo" className="h-24 w-auto brightness-125" />
-            <div className="absolute -inset-4 bg-amber-600/10 blur-3xl rounded-full" />
+            <img src={logoImages} alt="Logo" className="h-20 w-auto brightness-110" />
+            <div className="absolute -inset-8 bg-orange-500/10 blur-3xl rounded-full" />
           </motion.div>
 
           {/* Container de progression */}
@@ -75,21 +75,21 @@ export default function ProfessionalSplashScreen({ onComplete }) {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
-                    className="text-[9px] uppercase tracking-[0.3em] text-amber-600 font-bold block"
+                    className="text-[9px] uppercase tracking-[0.3em] text-orange-500 font-black block"
                   >
-                    {loadingSteps[currentStep]?.label}
+                    {loadingSteps[currentStep]?.label || 'Lancement...'}
                   </motion.span>
                 </AnimatePresence>
               </div>
-              <span className="text-[10px] tabular-nums text-gray-500 font-light">
+              <span className="text-[10px] tabular-nums text-slate-500 font-bold">
                 {Math.round(progress)}%
               </span>
             </div>
 
-            {/* Barre de progression : Style Luxe (Ambre sur Ardoise) */}
-            <div className="h-[2px] w-full bg-gray-900 relative">
+            {/* Barre de progression : Orange sur Bleu Sombre */}
+            <div className="h-[2px] w-full bg-slate-800 relative">
               <motion.div
-                className="absolute left-0 top-0 h-full bg-amber-600 shadow-[0_0_10px_rgba(217,119,6,0.5)]"
+                className="absolute left-0 top-0 h-full bg-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.4)]"
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 transition={{ ease: "linear" }}
@@ -97,13 +97,13 @@ export default function ProfessionalSplashScreen({ onComplete }) {
             </div>
           </div>
 
-          {/* Slogan subtil en bas */}
+          {/* Slogan Business */}
           <motion.p 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
-            className="absolute bottom-12 text-[10px] uppercase tracking-[0.5em] text-gray-400"
+            animate={{ opacity: 0.5 }}
+            className="absolute bottom-12 text-[10px] uppercase tracking-[0.5em] text-slate-400 font-medium"
           >
-            Défendre • Guider • Transmettre
+            Audit • Protection • Croissance
           </motion.p>
         </motion.div>
       )}

@@ -117,7 +117,7 @@ export default function Hero() {
   const [elementRef] = useIntersectionObserver();
   const navigate = useNavigate();
 
-  const backgrounds = ['/paris-business-1.jpg', '/office-modern.jpg', '/meeting-assurance.jpg'];
+  const backgrounds = ['/background4.jpeg', '/background5.jpeg', '/background6.jpeg'];
   const [bgIndex, setBgIndex] = useState(0);
 
   useEffect(() => {
