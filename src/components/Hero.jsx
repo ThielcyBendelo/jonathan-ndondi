@@ -132,7 +132,7 @@ export default function Hero() {
       <section
         ref={elementRef}
         id="home"
-        className="relative min-h-screen flex flex-col justify-center items-center text-center py-24 px-6 overflow-hidden bg-[#191970]"
+        className="relative min-h-screen flex flex-col justify-center items-center text-center py-16 px-6 overflow-hidden bg-[#191970]"
       >
         <AnimatePresence mode="wait">
           <motion.div
